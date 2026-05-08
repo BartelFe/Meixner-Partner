@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <circle cx="32" cy="32" r="32" fill="#0B0B0B"/>
+  <text x="32" y="32"
+        text-anchor="middle"
+        dominant-baseline="central"
+        font-family="'Geist Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace"
+        font-size="26"
+        font-weight="600"
+        letter-spacing="-0.5"
+        fill="#F2EFE7">M+</text>
+</svg>
