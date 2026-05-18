@@ -1400,6 +1400,258 @@ footer{
   border:none;cursor:pointer;transition:background 0.3s,color 0.3s;
 }
 .cc-btn:hover{background:var(--blue);color:#fff}
+
+/* ==========================================================================
+   CASE STUDY MODAL
+   ========================================================================== */
+.cs-modal{
+  position:fixed;inset:0;z-index:9800;
+  display:flex;align-items:flex-end;justify-content:center;
+  pointer-events:none;
+}
+.cs-modal[data-open="1"]{pointer-events:auto}
+
+.cs-backdrop{
+  position:absolute;inset:0;
+  background:rgba(11,11,11,0.7);
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  opacity:0;transition:opacity 0.5s var(--ease);
+  border:none;cursor:pointer;padding:0;
+}
+.cs-modal[data-open="1"] .cs-backdrop{opacity:1}
+
+.cs-shell{
+  position:relative;
+  width:96vw;max-width:1500px;height:94vh;max-height:1000px;
+  background:var(--paper);
+  border-radius:8px;overflow:hidden;
+  display:flex;flex-direction:column;
+  box-shadow:0 60px 120px rgba(0,0,0,0.4);
+  transform:translateY(40px);opacity:0;
+  transition:transform 0.6s var(--ease), opacity 0.5s var(--ease);
+  margin-bottom:3vh;
+}
+.cs-modal[data-open="1"] .cs-shell{transform:translateY(0);opacity:1}
+
+.cs-bar{
+  flex-shrink:0;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:18px clamp(20px,2.5vw,36px);
+  border-bottom:1px solid var(--line);
+  background:rgba(242,239,231,0.92);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  z-index:2;
+}
+.cs-bar-l, .cs-bar-r{display:flex;align-items:center;gap:14px}
+
+.cs-close{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--ink);color:#fff;
+  border:none;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:transform 0.3s var(--ease);
+}
+.cs-close:hover{transform:rotate(90deg)}
+.cs-close svg{width:14px;height:14px}
+
+.cs-bar-section{
+  font-family:var(--ff-mono);font-size:11px;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--ink-60);
+}
+
+.cs-bar-count{
+  font-family:var(--ff-mono);font-size:11px;
+  letter-spacing:0.14em;color:var(--ink-60);
+  display:inline-flex;align-items:baseline;gap:4px;
+  margin-right:6px;
+}
+.cs-bar-count em{font-style:normal;color:var(--ink);font-family:var(--ff-display);font-size:14px;font-weight:500}
+
+.cs-nav-btn{
+  width:34px;height:34px;border-radius:50%;
+  background:transparent;color:var(--ink);
+  border:1px solid var(--line);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:background 0.3s, color 0.3s;
+}
+.cs-nav-btn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.cs-nav-btn svg{width:14px;height:14px}
+
+.cs-content{
+  flex:1;overflow:hidden;
+  display:grid;grid-template-columns:1.4fr 1fr;
+  min-height:0;
+}
+
+.cs-gallery{
+  overflow-y:auto;
+  background:var(--paper-2);
+  padding:clamp(20px,2vw,32px);
+  display:flex;flex-direction:column;gap:clamp(14px,2vw,24px);
+  scroll-behavior:smooth;
+}
+.cs-gallery::-webkit-scrollbar{width:6px}
+.cs-gallery::-webkit-scrollbar-track{background:transparent}
+.cs-gallery::-webkit-scrollbar-thumb{background:var(--ink-40);border-radius:3px}
+
+.cs-fig{
+  position:relative;margin:0;
+  border-radius:4px;overflow:hidden;
+  background:var(--ink);
+  aspect-ratio:4/3;
+}
+.cs-fig:first-child{aspect-ratio:16/10}
+.cs-fig img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform 0.8s var(--ease);
+}
+.cs-fig:hover img{transform:scale(1.02)}
+
+.cs-fig-num{
+  position:absolute;top:14px;left:14px;
+  font-family:var(--ff-mono);font-size:10px;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:#fff;background:rgba(11,11,11,0.55);
+  backdrop-filter:blur(8px);
+  padding:5px 10px;border-radius:100px;
+}
+
+.cs-side{
+  overflow-y:auto;
+  padding:clamp(28px,3.5vw,56px) clamp(24px,3vw,48px);
+  display:flex;flex-direction:column;
+  scroll-behavior:smooth;
+}
+.cs-side::-webkit-scrollbar{width:6px}
+.cs-side::-webkit-scrollbar-track{background:transparent}
+.cs-side::-webkit-scrollbar-thumb{background:var(--ink-40);border-radius:3px}
+
+.cs-eyebrow{
+  font-family:var(--ff-mono);font-size:10px;
+  letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--blue);font-weight:500;
+  display:inline-flex;align-items:center;gap:10px;
+  margin-bottom:18px;
+}
+.cs-eyebrow::before{content:'';width:24px;height:1px;background:currentColor}
+
+.cs-title{
+  font-family:var(--ff-display);font-weight:300;
+  font-variation-settings:"opsz" 144;
+  font-size:clamp(32px,3.5vw,52px);line-height:1.02;letter-spacing:-0.035em;
+  color:var(--ink);margin-bottom:10px;
+}
+
+.cs-location{
+  font-family:var(--ff-italic);font-style:italic;font-weight:400;
+  font-size:18px;color:var(--ink-60);
+  margin-bottom:36px;
+}
+
+.cs-meta{
+  display:flex;flex-direction:column;gap:0;
+  margin:0 0 32px;padding:0;
+  border-top:1px solid var(--line);
+}
+.cs-meta-row{
+  display:grid;grid-template-columns:130px 1fr;
+  gap:18px;padding:14px 0;
+  border-bottom:1px solid var(--line);
+}
+.cs-meta-row dt{
+  font-family:var(--ff-mono);font-size:10px;
+  letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--ink-40);font-weight:500;
+  padding-top:3px;
+}
+.cs-meta-row dd{
+  font-family:var(--ff-body);font-size:14px;line-height:1.55;
+  color:var(--ink);margin:0;
+}
+.cs-meta-row dd em{
+  font-family:var(--ff-italic);font-style:italic;color:var(--blue);
+}
+
+.cs-metrics{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:12px;margin-bottom:36px;
+}
+.cs-metric{
+  background:var(--paper-2);
+  padding:18px 16px;border-radius:4px;
+  display:flex;flex-direction:column;gap:6px;
+  border-left:2px solid var(--blue);
+}
+.cs-metric-label{
+  font-family:var(--ff-mono);font-size:9px;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--ink-40);
+}
+.cs-metric-value{
+  font-family:var(--ff-display);font-weight:500;
+  font-variation-settings:"opsz" 36;
+  font-size:18px;line-height:1.2;letter-spacing:-0.01em;
+  color:var(--ink);
+}
+
+.cs-desc{
+  margin-bottom:32px;
+  padding-top:32px;border-top:1px solid var(--line);
+  display:flex;flex-direction:column;gap:16px;
+}
+.cs-desc p{
+  font-family:var(--ff-body);font-size:15px;line-height:1.75;
+  color:var(--ink);
+}
+.cs-desc p:first-child::first-letter{
+  font-family:var(--ff-display);font-weight:300;
+  font-variation-settings:"opsz" 144;
+  font-size:56px;line-height:0.9;
+  float:left;margin:4px 12px -4px 0;color:var(--blue);
+}
+
+.cs-tags{
+  display:flex;flex-wrap:wrap;gap:8px;
+  padding-top:24px;border-top:1px solid var(--line);
+  margin-bottom:32px;
+}
+.cs-tag{
+  font-family:var(--ff-mono);font-size:10px;
+  letter-spacing:0.1em;text-transform:uppercase;
+  color:var(--ink-60);
+  padding:6px 12px;border:1px solid var(--line);
+  border-radius:100px;
+}
+
+.cs-footnote{
+  font-family:var(--ff-body);font-size:12px;
+  color:var(--ink-40);font-style:italic;
+  line-height:1.6;margin-top:auto;padding-top:24px;
+}
+
+@media(max-width:1024px){
+  .cs-shell{width:100vw;height:100vh;max-height:100vh;border-radius:0;margin-bottom:0}
+  .cs-modal{align-items:stretch}
+  .cs-content{grid-template-columns:1fr;grid-template-rows:auto 1fr;overflow-y:auto}
+  .cs-gallery{
+    flex-direction:row;overflow-x:auto;overflow-y:visible;
+    padding:16px;gap:12px;scroll-snap-type:x mandatory;
+    max-height:55vh;
+  }
+  .cs-fig{flex-shrink:0;width:85%;scroll-snap-align:start;aspect-ratio:4/3 !important}
+  .cs-side{padding:clamp(24px,5vw,40px)}
+  .cs-metrics{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .cs-bar{padding:12px 16px}
+  .cs-bar-section{display:none}
+  .cs-metrics{grid-template-columns:1fr}
+  .cs-meta-row{grid-template-columns:100px 1fr;gap:12px}
+}
+
+body[data-cs-open="1"]{overflow:hidden}
+
 .foot-socials{display:flex;gap:10px;margin-top:8px}
 .foot-soc{
   width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,0.15);
@@ -2086,14 +2338,14 @@ footer{
     <div class="ref-head-meta">
       <span>§ 03 — Projekte</span>
       <span class="ref-head-count">12<em>/100+</em></span>
-      <span>Auswahl realisierter Vorhaben</span>
+      <span>Auswahl realisierter Vorhaben · Klicken für Details</span>
     </div>
   </div>
   <div class="ref-pin" id="refPin">
     <div class="ref-ghost" aria-hidden="true">Referenzen</div>
     <div class="ref-track" id="refTrack">
 
-      <article class="ref-card" data-cursor="view">
+      <article class="ref-card" data-cursor="view" data-project-id="schulzentrum-odelzhausen">
         <div class="ref-card-img">
           <span class="ref-card-num">01</span>
           <span class="ref-card-cat">Bildung</span>
@@ -2106,7 +2358,7 @@ footer{
         </div>
       </article>
 
-      <article class="ref-card" data-cursor="view">
+      <article class="ref-card" data-cursor="view" data-project-id="schulen-orleansstrasse">
         <div class="ref-card-img">
           <span class="ref-card-num">02</span>
           <span class="ref-card-cat">Bildung</span>
@@ -2119,7 +2371,7 @@ footer{
         </div>
       </article>
 
-      <article class="ref-card" data-cursor="view">
+      <article class="ref-card" data-cursor="view" data-project-id="akademie-hwk">
         <div class="ref-card-img">
           <span class="ref-card-num">03</span>
           <span class="ref-card-cat">Verwaltung</span>
@@ -2132,7 +2384,7 @@ footer{
         </div>
       </article>
 
-      <article class="ref-card" data-cursor="view">
+      <article class="ref-card" data-cursor="view" data-project-id="fug-friedberg">
         <div class="ref-card-img">
           <span class="ref-card-num">04</span>
           <span class="ref-card-cat">Verwaltung</span>
@@ -2141,11 +2393,11 @@ footer{
         <div class="ref-card-info">
           <h3 class="ref-card-title">Finanz- und Gesundheitszentrum</h3>
           <p class="ref-card-sub"><span>Neubau · Mischnutzung</span><span>Friedberg</span></p>
-          <p class="ref-card-client">Stadt Friedberg</p>
+          <p class="ref-card-client">Stadtsparkasse Augsburg</p>
         </div>
       </article>
 
-      <article class="ref-card" data-cursor="view">
+      <article class="ref-card" data-cursor="view" data-project-id="kloster-roggenburg">
         <div class="ref-card-img">
           <span class="ref-card-num">05</span>
           <span class="ref-card-cat">Denkmal</span>
@@ -2158,7 +2410,7 @@ footer{
         </div>
       </article>
 
-      <article class="ref-card" data-cursor="view">
+      <article class="ref-card" data-cursor="view" data-project-id="mkkd-ingolstadt">
         <div class="ref-card-img">
           <span class="ref-card-num">06</span>
           <span class="ref-card-cat">Denkmal · Museum</span>
@@ -2171,7 +2423,7 @@ footer{
         </div>
       </article>
 
-      <article class="ref-card" data-cursor="view">
+      <article class="ref-card" data-cursor="view" data-project-id="diether-kunerth-museum">
         <div class="ref-card-img">
           <span class="ref-card-num">07</span>
           <span class="ref-card-cat">Museum</span>
@@ -2180,11 +2432,11 @@ footer{
         <div class="ref-card-info">
           <h3 class="ref-card-title">Diether-Kunerth-Museum</h3>
           <p class="ref-card-sub"><span>Museumsneubau</span><span>Ottobeuren</span></p>
-          <p class="ref-card-client">Markt Ottobeuren</p>
+          <p class="ref-card-client">Zweckverband Ottobeuren</p>
         </div>
       </article>
 
-      <article class="ref-card" data-cursor="view">
+      <article class="ref-card" data-cursor="view" data-project-id="museumsdepot-lhm">
         <div class="ref-card-img">
           <span class="ref-card-num">08</span>
           <span class="ref-card-cat">Museum</span>
@@ -2197,7 +2449,7 @@ footer{
         </div>
       </article>
 
-      <article class="ref-card" data-cursor="view">
+      <article class="ref-card" data-cursor="view" data-project-id="zentrum-innere-medizin-wuerzburg">
         <div class="ref-card-img">
           <span class="ref-card-num">09</span>
           <span class="ref-card-cat">Gesundheit</span>
@@ -2210,7 +2462,7 @@ footer{
         </div>
       </article>
 
-      <article class="ref-card" data-cursor="view">
+      <article class="ref-card" data-cursor="view" data-project-id="klinikum-aschaffenburg">
         <div class="ref-card-img">
           <span class="ref-card-num">10</span>
           <span class="ref-card-cat">Gesundheit</span>
@@ -2223,7 +2475,7 @@ footer{
         </div>
       </article>
 
-      <article class="ref-card" data-cursor="view">
+      <article class="ref-card" data-cursor="view" data-project-id="dlr-augsburg">
         <div class="ref-card-img">
           <span class="ref-card-num">11</span>
           <span class="ref-card-cat">Forschung</span>
@@ -2236,7 +2488,7 @@ footer{
         </div>
       </article>
 
-      <article class="ref-card" data-cursor="view">
+      <article class="ref-card" data-cursor="view" data-project-id="uni-wuerzburg-e6">
         <div class="ref-card-img">
           <span class="ref-card-num">12</span>
           <span class="ref-card-cat">Forschung</span>
@@ -3087,6 +3339,737 @@ setTimeout(() => {
     localStorage.setItem(KEY, '1');
     cc.dataset.show = '0';
     setTimeout(() => { cc.hidden = true; }, 600);
+  });
+})();
+
+</script>
+
+
+<!-- ==========================================================================
+     PROJECT DATA (inline JSON for case-study modal)
+     ========================================================================== -->
+<script type="application/json" id="projectsData">
+{
+  "projects": [
+    {
+      "id": "schulzentrum-odelzhausen",
+      "sector": "bildung",
+      "sector_label": "Bildung",
+      "title": "Schulzentrum Odelzhausen",
+      "location": "Odelzhausen",
+      "scope": "Neubau · Schulzentrum",
+      "client": "Zweckverband Grund- und Mittelschule Odelzhausen",
+      "architects": "BA 1: Schankula Architekten · BA 2: ARGE Spreen + Köhler",
+      "services": "Projektsteuerung Leistungsstufen 1 bis 5 · Handlungsbereiche A bis E",
+      "personal_reference": null,
+      "description_paragraphs": [
+        "Das neue moderne Schulzentrum in Odelzhausen mit Grund-, Mittel- und Realschule ist für etwa 1.300 Schüler ausgelegt.",
+        "Bei der räumlichen Gestaltung stand die Idee eines offenen Schulhauses mit frei zugänglichen Lerninseln in Anlehnung an das Lernhauskonzept im Vordergrund der Planungen. Die Schulen sind campusartig zueinander angeordnet, um Synergieeffekte zu nutzen und die Schulgemeinschaft zu stärken.",
+        "Durch die Bestandsschule im Westen, die Sporthalle im Norden und die Grundstücksgrenzen im Süden und Osten war die Baustelleneinrichtung nur schwer unterzubringen. Alle drei Schulen verfügen über anspruchsvolle haustechnische Anlagen. Die gemeinsame Heizzentrale erzeugt Strom und Wärme mittels eines Blockheizkraftwerkes."
+      ],
+      "metrics": [
+        {
+          "label": "Schüler",
+          "value": "≈ 1.300"
+        },
+        {
+          "label": "Schultypen",
+          "value": "Grund · Mittel · Real"
+        },
+        {
+          "label": "Energie",
+          "value": "BHKW"
+        }
+      ],
+      "tags": [
+        "Lernhauskonzept",
+        "Campusanordnung",
+        "BHKW",
+        "Mehrere Bauabschnitte"
+      ],
+      "current_project": true,
+      "gallery": [
+        "https://www.meixner-partner.de/wp-content/uploads/2020/07/awb_bildung_neu.jpg",
+        "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=85",
+        "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=1600&q=85",
+        "https://images.unsplash.com/photo-1577896851231-70ef18881754?w=1600&q=85"
+      ]
+    },
+    {
+      "id": "schulen-orleansstrasse",
+      "sector": "bildung",
+      "sector_label": "Bildung",
+      "title": "Schulen Orleansstraße",
+      "location": "München",
+      "scope": "Schulbauvorhaben",
+      "client": "Landeshauptstadt München",
+      "architects": null,
+      "services": "Projektsteuerung",
+      "personal_reference": null,
+      "description_paragraphs": [
+        "Schulbauvorhaben der Landeshauptstadt München in der Orleansstraße — Teil des umfangreichen Schulbauprogramms der LHM, das auf moderne pädagogische Konzepte wie Lernlandschaften und offene Lernhäuser setzt.",
+        "Wie alle Vorhaben für die Landeshauptstadt München unterliegt auch dieses Projekt den hohen kommunalen Anforderungen an Nachhaltigkeit, Wirtschaftlichkeit und Schulqualität."
+      ],
+      "metrics": [
+        {
+          "label": "Bauherr",
+          "value": "LHM"
+        }
+      ],
+      "tags": [
+        "Landeshauptstadt München",
+        "Schulbau",
+        "Lernlandschaft"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1592280771190-3e2e4d571952?w=1600&q=85",
+        "https://images.unsplash.com/photo-1571260899304-425eee4c7efc?w=1600&q=85",
+        "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=1600&q=85"
+      ]
+    },
+    {
+      "id": "akademie-hwk",
+      "sector": "verwaltung",
+      "sector_label": "Verwaltung",
+      "title": "Akademie + Servicezentrum",
+      "location": "Augsburg",
+      "scope": "Neubau · Verwaltung & Bildung",
+      "client": "Handwerkskammer für Schwaben",
+      "architects": "Eberle Architekten",
+      "services": "Projektsteuerung Leistungsstufen 1 bis 5 · Handlungsbereiche A bis E",
+      "personal_reference": null,
+      "description_paragraphs": [
+        "Der Neubau der Akademie der Handwerkskammer für Schwaben ist ein Schulungsgebäude mit Lehrsälen, Unterrichts- sowie Verwaltungsräumen. Das Gebäude hat eine vorgehängte bedruckte Glasfassade sowie weite vorgespannte Flachdecken.",
+        "Das haustechnische Konzept für die Akademie und das Servicezentrum wurde auf Grundlage von thermischen Gebäudesimulationen entwickelt. Heizung und Kühlung erfolgen über eine Betonkernaktivierung, ergänzt durch ein dezentrales Lüftungssystem.",
+        "Der Bauherr wurde von der Finanzierungsplanung bis zum Verwendungsnachweis betreut. Beide Projekte wurden vom Bund gefördert."
+      ],
+      "metrics": [
+        {
+          "label": "Fassade",
+          "value": "Bedruckte Glasfassade"
+        },
+        {
+          "label": "Klima",
+          "value": "Betonkernaktivierung"
+        },
+        {
+          "label": "Förderung",
+          "value": "Bundesmittel"
+        }
+      ],
+      "tags": [
+        "Glasfassade",
+        "Thermische Simulation",
+        "Bundesförderung",
+        "Förderantrag"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1600&q=85",
+        "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&q=85",
+        "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1600&q=85",
+        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=85"
+      ]
+    },
+    {
+      "id": "fug-friedberg",
+      "sector": "verwaltung",
+      "sector_label": "Verwaltung",
+      "title": "Finanz- und Gesundheitszentrum",
+      "location": "Friedberg",
+      "scope": "Generalsanierung · Umnutzung",
+      "client": "Stadtsparkasse Augsburg",
+      "architects": "Endres + Tiefenbacher Architekten PartGmbB",
+      "services": "Projektsteuerung Leistungsstufen 1 bis 5 · Handlungsbereiche A bis E",
+      "personal_reference": null,
+      "description_paragraphs": [
+        "Die ehemalige Zentrale der Stadtsparkasse Friedberg wurde im Rahmen einer Generalsanierung zu einem modernen Finanz- und Gesundheitszentrum umgebaut und beherbergt nun 16 Mieteinheiten mit Arztpraxen, Einzelhandel und Gastronomieflächen.",
+        "Bei der gesamten Planung wurden nachhaltige, ökologische und energiesparende Überlegungen in den Vordergrund gestellt. So zeichnet sich die neue Fassade durch beste energetische Werte und ein modernes, ansprechendes Design aus.",
+        "Nach Abschluss des Hauptprojekts wurden die Mieteinheiten auf hohem Standard nach den einzelnen Nutzerwünschen ausgebaut."
+      ],
+      "metrics": [
+        {
+          "label": "Mieteinheiten",
+          "value": "16"
+        },
+        {
+          "label": "Nutzungsmix",
+          "value": "Arzt · Handel · Gastro"
+        },
+        {
+          "label": "Art",
+          "value": "Sanierung"
+        }
+      ],
+      "tags": [
+        "Generalsanierung",
+        "Mischnutzung",
+        "Energetische Sanierung",
+        "Mieterausbau"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1554469384-e58fac16e23a?w=1600&q=85",
+        "https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1600&q=85",
+        "https://images.unsplash.com/photo-1604328698692-f76ea9498e76?w=1600&q=85"
+      ]
+    },
+    {
+      "id": "kloster-roggenburg",
+      "sector": "denkmalschutz",
+      "sector_label": "Denkmal",
+      "title": "Kloster Roggenburg",
+      "location": "Roggenburg",
+      "scope": "Sanierung · Neubau · Mehrere Bauabschnitte",
+      "client": "Prämonstratenser Kloster Roggenburg",
+      "architects": "Braun Architekten GmbH",
+      "services": "Projektsteuerung Leistungsstufen 1 bis 5 · Handlungsbereiche A bis E",
+      "personal_reference": null,
+      "description_paragraphs": [
+        "Die einzelnen Gebäude des Klosters Roggenburg, die aus verschiedenen Epochen stammen, wurden in mehreren Bauabschnitten saniert. Begonnen wurde mit dem Neubau des Bildungszentrums und einem Klostergasthof nach historischem Vorbild.",
+        "Anschließend wurde in zwei Bauabschnitten das kunsthistorisch bedeutsame Klostergebäude saniert. Die historischen und denkmalgeschützten Gebäude wurden gemäß der ursprünglich üblichen Bauweise saniert. Hier mussten hochwertige historische Bausubstanzen in die Aufgabenstellung und die Realisierung eingebunden werden — mit ständiger Begleitung des Bayerischen Landesamtes für Denkmalpflege.",
+        "Während der Sanierung des Klostergebäudes musste dafür Sorge getragen werden, dass der Besucherverkehr (ca. 100.000 Personen jährlich) sowie die Veranstaltungen im Bildungszentrum reibungslos stattfinden konnten."
+      ],
+      "metrics": [
+        {
+          "label": "Besucher / Jahr",
+          "value": "≈ 100.000"
+        },
+        {
+          "label": "Begleitung",
+          "value": "Bay. Landesamt Denkmalpflege"
+        },
+        {
+          "label": "Bauabschnitte",
+          "value": "Mehrere"
+        }
+      ],
+      "tags": [
+        "Denkmal",
+        "Sanierung",
+        "Bayer. Landesamt Denkmalpflege",
+        "Laufender Betrieb"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1605647540924-852290f6b0d5?w=1600&q=85",
+        "https://images.unsplash.com/photo-1568393691080-b5dffdaca80a?w=1600&q=85",
+        "https://images.unsplash.com/photo-1564507592333-c60657eea523?w=1600&q=85",
+        "https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=85"
+      ]
+    },
+    {
+      "id": "mkkd-ingolstadt",
+      "sector": "denkmalschutz",
+      "sector_label": "Denkmal · Museum",
+      "title": "Museum für Konkrete Kunst & Design",
+      "location": "Ingolstadt",
+      "scope": "Umbau · Erweiterung · Umnutzung",
+      "client": "Stadt Ingolstadt",
+      "architects": "querkraft architekten zt gmbh (Wien)",
+      "services": "Projektsteuerung Leistungsstufen 1 bis 5 · Handlungsbereiche A bis E",
+      "personal_reference": null,
+      "description_paragraphs": [
+        "Die alte königliche Gießereihalle in Ingolstadt wird umgebaut zum Museum für Konkrete Kunst und Design. Der Ausstellungsraum des Museums entsteht unter der bestehenden Halle.",
+        "Im geplanten Neubau wird ein idealer Ausstellungsraum geschaffen, der alle Anforderungen des Museumsbetriebs erfüllt. Im Erdgeschoss wird in die Halle eine Sichtbetonbox eingestellt, die alle Funktionsräume enthält. Im Zwischengeschoss befindet sich die Verwaltung, auf einer offenen Galerie die Museumspädagogik. Die Ausstellungs- und Technikräume bzw. die Werkstatt und das Depot sind im Untergeschoss vorgesehen.",
+        "Das historische Dachtragwerk wird erhalten, gereinigt und teilweise verstärkt. Die Fenster der Nord- und Westfassade werden restauriert und neu verglast, auf der Innenseite werden zusätzliche Isolierverglasungen angebracht. Die Fassadengestaltung der Süd- und Ostseite respektiert die Struktur der vorhandenen Fassade."
+      ],
+      "metrics": [
+        {
+          "label": "Bestand",
+          "value": "Königl. Gießereihalle"
+        },
+        {
+          "label": "Architekt",
+          "value": "querkraft (Wien)"
+        },
+        {
+          "label": "Konzept",
+          "value": "Sichtbetonbox"
+        }
+      ],
+      "tags": [
+        "Königliche Gießereihalle",
+        "Industriedenkmal",
+        "Sichtbetonbox",
+        "Erhaltung Tragwerk"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1565372195458-9de0b320ef04?w=1600&q=85",
+        "https://images.unsplash.com/photo-1554907984-15263bfd63bd?w=1600&q=85",
+        "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=1600&q=85",
+        "https://images.unsplash.com/photo-1577720580479-7d839d829c73?w=1600&q=85"
+      ]
+    },
+    {
+      "id": "diether-kunerth-museum",
+      "sector": "museen",
+      "sector_label": "Museen",
+      "title": "Diether-Kunerth-Museum",
+      "location": "Ottobeuren",
+      "scope": "Umnutzung · Erweiterung",
+      "client": "Zweckverband Ottobeuren",
+      "architects": "Atelier Lohrer Architekten",
+      "services": "Projektsteuerung Leistungsstufen 1 bis 5 · Handlungsbereiche A bis E",
+      "personal_reference": null,
+      "description_paragraphs": [
+        "Eine ehemalige Brauerei wurde zu einem zeitgemäßen Museum für Moderne Kunst inklusive Erweiterungsbau umgebaut. Auf zwei Ebenen gibt es nun Ausstellungsräumlichkeiten, Orte für museumspädagogische Arbeit und auch Lagerungsflächen mit anspruchsvollen raumklimatischen Bedingungen.",
+        "Das Gebäude wurde nach der Durchführung eines Architektenwettbewerbs realisiert. Im Museum wurden innovative technische Konzepte umgesetzt — die Kühlung erfolgt über Bachwasser, das Quellluftsystem ist Ergebnis thermischer Simulationen.",
+        "Das gestalterisch hochwertige Gesamtkonzept zeigt nicht, dass das Projekt mit geringsten finanziellen Mitteln realisiert werden musste."
+      ],
+      "metrics": [
+        {
+          "label": "Bestand",
+          "value": "Ehem. Brauerei"
+        },
+        {
+          "label": "Kühlung",
+          "value": "Bachwasser"
+        },
+        {
+          "label": "Verfahren",
+          "value": "Architektenwettbewerb"
+        }
+      ],
+      "tags": [
+        "Umnutzung",
+        "Architektenwettbewerb",
+        "Bachwasser-Kühlung",
+        "Quellluftsystem"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=1600&q=85",
+        "https://images.unsplash.com/photo-1531058020387-3be344556be6?w=1600&q=85",
+        "https://images.unsplash.com/photo-1577720580479-7d839d829c73?w=1600&q=85",
+        "https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=1600&q=85"
+      ]
+    },
+    {
+      "id": "museumsdepot-lhm",
+      "sector": "museen",
+      "sector_label": "Museen",
+      "title": "Museumsdepot",
+      "location": "München",
+      "scope": "Neubau · Spezialbau",
+      "client": "Baureferat der Landeshauptstadt München",
+      "architects": "Schmidt-Schicketanz Architekten",
+      "services": "Projektsteuerung Leistungsstufen 2 bis 5 · Handlungsbereiche C und D",
+      "personal_reference": null,
+      "description_paragraphs": [
+        "Mit dem Neubau des Museumsdepots hat die Landeshauptstadt einen Ort geschaffen, an dem die verschiedensten Objekte aus unterschiedlichen Münchner Museen zentral auf etwa 10.000 m² gelagert werden können.",
+        "Der quadratische Bau ist nicht nur funktional, sondern auch optisch sehr ansprechend. Das Gebäude hat insgesamt vier Stockwerke, zwei davon unterirdisch. Die Lagerräume sind auf die spezifischen Anforderungen der einzelnen Sammlungen zugeschnitten, ansonsten aber im Rohbaustandard belassen. Neben den Depoträumen wurden auch Räume für die wissenschaftliche Arbeit „am Objekt\" und Werkstätten für die Restaurierung vorgesehen.",
+        "Die gültige EnEV wurde nach Vorgaben der Landeshauptstadt München unterschritten und die raumklimatischen Anforderungen eines Museumsdepots (ASHRAE) wurden eingehalten."
+      ],
+      "metrics": [
+        {
+          "label": "Lagerfläche",
+          "value": "≈ 10.000 m²"
+        },
+        {
+          "label": "Stockwerke",
+          "value": "4 (2 unterirdisch)"
+        },
+        {
+          "label": "Klimanorm",
+          "value": "ASHRAE"
+        }
+      ],
+      "tags": [
+        "Museumsdepot",
+        "ASHRAE-Klima",
+        "Restaurierungs-Werkstatt",
+        "EnEV unterschritten"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1526041092449-209d556f7a32?w=1600&q=85",
+        "https://images.unsplash.com/photo-1568667256549-094345857637?w=1600&q=85",
+        "https://images.unsplash.com/photo-1574105752488-3f3a6dd6df3a?w=1600&q=85"
+      ]
+    },
+    {
+      "id": "zentrum-innere-medizin-wuerzburg",
+      "sector": "gesundheit",
+      "sector_label": "Gesundheit",
+      "title": "Zentrum für Innere Medizin",
+      "location": "Würzburg",
+      "scope": "Klinikneubau · Maximalversorgung",
+      "client": "Staatliches Bauamt Würzburg · Universitätsklinikum Würzburg",
+      "architects": "Schuster Pechtold Schmidt Architekten GmbH",
+      "services": "Projektsteuerung Leistungsstufen 1 bis 5 · Handlungsbereiche A bis E",
+      "personal_reference": "Werner Neußer, Dipl.-Ing.",
+      "description_paragraphs": [
+        "Das Zentrum für Innere Medizin (ZIM) schließt sich dem bereits bestehenden Zentrum Operative Fächer (ZOM) an und ergänzt sich mit diesem durch die organisatorische wie infrastrukturelle Zusammenlegung der chirurgischen mit der internistischen Diagnostik.",
+        "Beide Gebäude haben als Kliniken der Maximalversorgung eine entsprechende hochwertige technische Ausstattung. Insgesamt waren zur Errichtung des ZIM über 140 Gewerke über die Planung, Terminplanung, Ausschreibung und Vergabe, die Bauausführung, die Vorbereitung und Durchführung der Inbetriebnahmen und Abnahmen bis zur Verfolgung von Mängelansprüchen zu koordinieren und zu überprüfen.",
+        "Während der Bauphase wurde der Betrieb des ZOM vollumfänglich aufrechterhalten."
+      ],
+      "metrics": [
+        {
+          "label": "Gewerke",
+          "value": "> 140"
+        },
+        {
+          "label": "Versorgungsstufe",
+          "value": "Maximalversorgung"
+        },
+        {
+          "label": "Bauphase",
+          "value": "ZOM in Betrieb"
+        }
+      ],
+      "tags": [
+        "Universitätsklinikum",
+        "140 Gewerke",
+        "Maximalversorgung",
+        "Laufender Klinikbetrieb"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600&q=85",
+        "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=1600&q=85",
+        "https://images.unsplash.com/photo-1551076805-e1869033e561?w=1600&q=85",
+        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1600&q=85"
+      ]
+    },
+    {
+      "id": "klinikum-aschaffenburg",
+      "sector": "gesundheit",
+      "sector_label": "Gesundheit",
+      "title": "Klinikum Aschaffenburg",
+      "location": "Aschaffenburg",
+      "scope": "Erweiterung · Aufstockung · Sanierung",
+      "client": "Krankenhauszweckverband Aschaffenburg",
+      "architects": "khb architekten · khb plan GmbH",
+      "services": "Projektsteuerung Leistungsstufen 1 bis 5 · Handlungsbereiche A bis E",
+      "personal_reference": "Jessica Hechler, Dipl.-Ing.",
+      "description_paragraphs": [
+        "Die Erweiterung des Klinikums in Aschaffenburg umfasste eine Aufstockung des Bettenhauses, den Umbau der vorhandenen Eingangshalle und der Notbehandlung, eine Aufstockung des Funktionstraktes im 1. Obergeschoss sowie Umbau- und Erweiterungsmaßnahmen im 1. Untergeschoss.",
+        "Die besonderen Anforderungen waren die Durchführung komplexer Umbaumaßnahmen im laufenden Betrieb und die damit verbundene offene Kommunikation zwischen Planern, Bauherr und Nutzern.",
+        "Es handelte sich um eine Fördermaßnahme der Regierung von Unterfranken."
+      ],
+      "metrics": [
+        {
+          "label": "Aufstockung",
+          "value": "Bettenhaus"
+        },
+        {
+          "label": "Bauphase",
+          "value": "Laufender Betrieb"
+        },
+        {
+          "label": "Förderung",
+          "value": "Reg. Unterfranken"
+        }
+      ],
+      "tags": [
+        "Aufstockung",
+        "Laufender Klinikbetrieb",
+        "Notbehandlung",
+        "Bezirksförderung"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=1600&q=85",
+        "https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=1600&q=85",
+        "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1600&q=85"
+      ]
+    },
+    {
+      "id": "dlr-augsburg",
+      "sector": "forschung",
+      "sector_label": "Forschung",
+      "title": "SG 900 — DLR Augsburg",
+      "location": "Augsburger Innovationspark",
+      "scope": "Forschungsneubau · Institutsbau",
+      "client": "Deutsches Zentrum für Luft- und Raumfahrt e. V.",
+      "architects": "Nickl & Partner Architekten AG",
+      "services": "Projektsteuerung Leistungsstufen 1 bis 5 · Handlungsbereiche A bis E",
+      "personal_reference": null,
+      "description_paragraphs": [
+        "Das Deutsche Zentrum für Luft- und Raumfahrt e. V. (DLR) errichtet im Augsburger Innovationspark ein neues Institut für den Test und die Simulation von Gasturbinen. Die Aufgabenstellung für die Prüfstände und das Gebäude wurden in einer umfangreichen Machbarkeitsstudie festgehalten.",
+        "Es entstehen zwei Baukörper: ein Kopfbau mit Laboren und Büros sowie eine Halle mit den Prüfständen und der notwendigen technischen Ausstattung. Die Fassade ist eine moderne Alu-Blech-Konstruktion, im Sockelbereich werden Faserzementplatten angebracht.",
+        "Das gesamte Projekt wird mit BIM (Building Information Modeling) abgewickelt."
+      ],
+      "metrics": [
+        {
+          "label": "Funktion",
+          "value": "Gasturbinen-Tests"
+        },
+        {
+          "label": "Baukörper",
+          "value": "Kopfbau + Halle"
+        },
+        {
+          "label": "Methodik",
+          "value": "BIM"
+        }
+      ],
+      "tags": [
+        "DLR",
+        "BIM",
+        "Gasturbinen-Prüfstand",
+        "Augsburger Innovationspark"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1518005068251-37900150dfca?w=1600&q=85",
+        "https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=1600&q=85",
+        "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=1600&q=85",
+        "https://images.unsplash.com/photo-1582719188393-bb71ca45dbb9?w=1600&q=85"
+      ]
+    },
+    {
+      "id": "uni-wuerzburg-e6",
+      "sector": "forschung",
+      "sector_label": "Forschung",
+      "title": "Gebäude E6 — Universität Würzburg",
+      "location": "Würzburg",
+      "scope": "Sanierung · Institut für Systemimmunologie",
+      "client": "Universität Würzburg",
+      "architects": "Staatliches Bauamt Würzburg (Objektplanung)",
+      "services": "Termin- und Kostencontrolling (Beratung)",
+      "personal_reference": null,
+      "description_paragraphs": [
+        "Im Rahmen der Sanierung des Instituts für Systemimmunologie der Universität Würzburg wurde Meixner + Partner für das Termin- sowie Kostencontrolling als beratendes Büro hinzugezogen.",
+        "Es wurde eine erneute Bestandsanalyse und Terminplanung durchgeführt — so konnte das Gebäude im März 2020 zum geplanten Zeitpunkt übergeben werden.",
+        "Das sanierte Institut verfügt nun über acht Tierhaltungsräume, einen Raum für keimfreie Tierhaltung und einen Raum für Intravitalmikroskopie. Darüber hinaus wurden diverse Nebenräume saniert und die Elektroverteilung und Haustechnik erneuert."
+      ],
+      "metrics": [
+        {
+          "label": "Tierhaltungsräume",
+          "value": "8 + keimfrei"
+        },
+        {
+          "label": "Übergabe",
+          "value": "März 2020"
+        },
+        {
+          "label": "Rolle",
+          "value": "Beratung"
+        }
+      ],
+      "tags": [
+        "Systemimmunologie",
+        "Tierhaltung",
+        "Intravitalmikroskopie",
+        "Kostencontrolling"
+      ],
+      "gallery": [
+        "https://images.unsplash.com/photo-1577495508048-b635879837f1?w=1600&q=85",
+        "https://images.unsplash.com/photo-1581093588401-fbb62a02f120?w=1600&q=85",
+        "https://images.unsplash.com/photo-1576086213369-97a306d36557?w=1600&q=85"
+      ]
+    }
+  ]
+}
+</script>
+
+<!-- ==========================================================================
+     CASE STUDY MODAL
+     ========================================================================== -->
+<div class="cs-modal" id="csModal" role="dialog" aria-modal="true" aria-labelledby="csTitle" hidden>
+  <button class="cs-backdrop" id="csBackdrop" aria-label="Modal schließen" tabindex="-1"></button>
+
+  <div class="cs-shell" role="document">
+    <header class="cs-bar">
+      <div class="cs-bar-l">
+        <button class="cs-close" id="csClose" aria-label="Schließen">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M6 6l12 12M18 6L6 18"/>
+          </svg>
+        </button>
+        <span class="cs-bar-section">§ 03 — Projekte</span>
+      </div>
+      <div class="cs-bar-r">
+        <span class="cs-bar-count"><em id="csCount">01</em><span>/12</span></span>
+        <button class="cs-nav-btn" id="csPrev" aria-label="Vorheriges Projekt">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <button class="cs-nav-btn" id="csNext" aria-label="Nächstes Projekt">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 18l6-6-6-6"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="cs-content" id="csContent">
+      <div class="cs-gallery" id="csGallery"></div>
+
+      <aside class="cs-side" id="csSide">
+        <span class="cs-eyebrow" id="csSector">Sektor</span>
+        <h2 class="cs-title" id="csTitle">Projekt Titel</h2>
+        <p class="cs-location" id="csLocation">Ort</p>
+
+        <dl class="cs-meta" id="csMeta"></dl>
+
+        <div class="cs-metrics" id="csMetrics"></div>
+
+        <div class="cs-desc" id="csDesc"></div>
+
+        <div class="cs-tags" id="csTags"></div>
+
+        <p class="cs-footnote">Bildmaterial: Stock-Platzhalter zur Visualisierung. Originalaufnahmen liegen im Archiv von Meixner + Partner.</p>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<script>
+
+/* ==========================================================================
+   CASE STUDY MODAL
+   ========================================================================== */
+(function(){
+  const dataEl = document.getElementById('projectsData');
+  const modal = document.getElementById('csModal');
+  if(!dataEl || !modal) return;
+
+  let projects = [];
+  try {
+    projects = JSON.parse(dataEl.textContent).projects || [];
+  } catch(e) {
+    console.warn('Projects data malformed', e);
+    return;
+  }
+  if(!projects.length) return;
+
+  const backdrop = document.getElementById('csBackdrop');
+  const closeBtn = document.getElementById('csClose');
+  const prevBtn = document.getElementById('csPrev');
+  const nextBtn = document.getElementById('csNext');
+  const count = document.getElementById('csCount');
+  const gallery = document.getElementById('csGallery');
+  const sideEl = document.getElementById('csSide');
+  const sectorEl = document.getElementById('csSector');
+  const titleEl = document.getElementById('csTitle');
+  const locationEl = document.getElementById('csLocation');
+  const metaEl = document.getElementById('csMeta');
+  const metricsEl = document.getElementById('csMetrics');
+  const descEl = document.getElementById('csDesc');
+  const tagsEl = document.getElementById('csTags');
+
+  let currentIndex = -1;
+  const total = projects.length;
+
+  function escapeHtml(s){
+    return String(s ?? '').replace(/[&<>"']/g, c => ({
+      '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
+    }[c]));
+  }
+
+  function renderProject(idx){
+    const p = projects[idx];
+    if(!p) return;
+    currentIndex = idx;
+
+    count.textContent = String(idx + 1).padStart(2, '0');
+
+    gallery.innerHTML = (p.gallery || []).map((src, i) => `
+      <figure class="cs-fig">
+        <span class="cs-fig-num">${String(i + 1).padStart(2, '0')} / ${String(p.gallery.length).padStart(2, '0')}</span>
+        <img src="${escapeHtml(src)}" alt="${escapeHtml(p.title)} — Bild ${i + 1}" loading="lazy">
+      </figure>
+    `).join('');
+    gallery.scrollTop = 0;
+
+    sectorEl.textContent = p.sector_label || p.sector || 'Sektor';
+    titleEl.innerHTML = escapeHtml(p.title);
+    locationEl.textContent = p.location || '';
+
+    const metaRows = [];
+    if(p.client) metaRows.push(['Auftraggeber', p.client]);
+    if(p.location) metaRows.push(['Ort', p.location]);
+    if(p.scope) metaRows.push(['Art', p.scope]);
+    if(p.architects) metaRows.push(['Objektplanung', p.architects]);
+    if(p.services) metaRows.push(['Leistungen', p.services]);
+    if(p.personal_reference) metaRows.push(['Persönliche Referenz', `<em>${escapeHtml(p.personal_reference)}</em>`]);
+
+    metaEl.innerHTML = metaRows.map(([k, v]) => `
+      <div class="cs-meta-row">
+        <dt>${escapeHtml(k)}</dt>
+        <dd>${v.includes('<em>') ? v : escapeHtml(v)}</dd>
+      </div>
+    `).join('');
+
+    metricsEl.innerHTML = (p.metrics || []).map(m => `
+      <div class="cs-metric">
+        <span class="cs-metric-label">${escapeHtml(m.label)}</span>
+        <span class="cs-metric-value">${escapeHtml(m.value)}</span>
+      </div>
+    `).join('');
+    metricsEl.style.display = (p.metrics && p.metrics.length) ? '' : 'none';
+
+    descEl.innerHTML = (p.description_paragraphs || []).map(t => `<p>${escapeHtml(t)}</p>`).join('');
+
+    tagsEl.innerHTML = (p.tags || []).map(t => `<span class="cs-tag">${escapeHtml(t)}</span>`).join('');
+    tagsEl.style.display = (p.tags && p.tags.length) ? '' : 'none';
+
+    sideEl.scrollTop = 0;
+  }
+
+  function openModal(idx){
+    if(idx < 0 || idx >= total) return;
+    renderProject(idx);
+    modal.hidden = false;
+    document.body.dataset.csOpen = '1';
+    setTimeout(() => modal.dataset.open = '1', 16);
+    if(window.lenis && typeof window.lenis.stop === 'function') window.lenis.stop();
+  }
+
+  function closeModal(updateHash){
+    modal.dataset.open = '0';
+    document.body.dataset.csOpen = '';
+    setTimeout(() => { modal.hidden = true; }, 600);
+    if(updateHash !== false && location.hash.startsWith('#projekt/')){
+      history.replaceState(null, '', location.pathname + location.search);
+    }
+    if(window.lenis && typeof window.lenis.start === 'function') window.lenis.start();
+  }
+
+  function navigate(delta){
+    const newIdx = (currentIndex + delta + total) % total;
+    renderProject(newIdx);
+    const id = projects[newIdx].id;
+    history.replaceState(null, '', '#projekt/' + id);
+  }
+
+  function findIndexById(id){
+    return projects.findIndex(p => p.id === id);
+  }
+
+  function openFromHash(){
+    const m = location.hash.match(/^#projekt\/(.+)$/);
+    if(!m) return false;
+    const idx = findIndexById(m[1]);
+    if(idx >= 0){
+      openModal(idx);
+      return true;
+    }
+    return false;
+  }
+
+  closeBtn.addEventListener('click', () => closeModal());
+  backdrop.addEventListener('click', () => closeModal());
+  prevBtn.addEventListener('click', () => navigate(-1));
+  nextBtn.addEventListener('click', () => navigate(1));
+
+  document.addEventListener('keydown', (e) => {
+    if(modal.dataset.open !== '1') return;
+    if(e.key === 'Escape') closeModal();
+    else if(e.key === 'ArrowLeft') navigate(-1);
+    else if(e.key === 'ArrowRight') navigate(1);
+  });
+
+  document.querySelectorAll('.ref-card[data-project-id]').forEach(card => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      const id = card.dataset.projectId;
+      const idx = findIndexById(id);
+      if(idx >= 0){
+        history.replaceState(null, '', '#projekt/' + id);
+        openModal(idx);
+      }
+    });
+    card.style.cursor = 'pointer';
+  });
+
+  openFromHash();
+  window.addEventListener('hashchange', () => {
+    if(!openFromHash() && modal.dataset.open === '1'){
+      closeModal(false);
+    }
   });
 })();
 
