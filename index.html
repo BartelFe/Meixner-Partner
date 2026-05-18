@@ -544,6 +544,52 @@ button{font-family:inherit;cursor:none;background:none;border:none;color:inherit
 }
 
 /* ==========================================================================
+   TRUST BAR
+   ========================================================================== */
+.trust-bar{
+  background:var(--paper-2);
+  border-bottom:1px solid var(--line);
+  padding:clamp(14px,2vw,22px) var(--pad);
+}
+.trust-inner{
+  max-width:var(--max);margin:0 auto;
+  display:flex;align-items:center;gap:clamp(18px,3vw,40px);
+  flex-wrap:wrap;
+}
+.trust-label{
+  font-family:var(--ff-mono);font-size:10px;
+  letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--ink-60);flex-shrink:0;
+  display:inline-flex;align-items:center;gap:10px;
+}
+.trust-label::before{
+  content:'';width:24px;height:1px;background:currentColor;
+}
+.trust-list{
+  list-style:none;display:flex;gap:clamp(14px,2.5vw,32px);
+  flex-wrap:wrap;align-items:center;margin:0;padding:0;
+}
+.trust-list li{
+  font-family:var(--ff-display);font-weight:500;font-size:14px;
+  font-variation-settings:"opsz" 24;
+  color:var(--ink);letter-spacing:-0.005em;
+  position:relative;
+}
+.trust-list li:not(:last-child)::after{
+  content:'';display:inline-block;
+  width:3px;height:3px;border-radius:50%;
+  background:var(--ink-40);
+  margin-left:clamp(14px,2.5vw,32px);
+  vertical-align:middle;
+}
+.trust-list abbr{text-decoration:none;border:none;cursor:help}
+@media(max-width:700px){
+  .trust-list li:not(:last-child)::after{display:none}
+  .trust-list{gap:14px}
+  .trust-list li{font-size:13px}
+}
+
+/* ==========================================================================
    MANIFEST — large serif statement with word-by-word reveal
    ========================================================================== */
 #manifest{
@@ -1398,6 +1444,21 @@ footer{
     <span class="stat-desc">Architekt:innen, Ingenieur:innen, kaufmännische Angestellte und Projektassistenz — als Familienunternehmen.</span>
   </div>
 </div>
+
+<!-- TRUST BAR — Mitgliedschaften & Auditierungen -->
+<aside class="trust-bar" aria-label="Mitgliedschaften und Qualifikationen">
+  <div class="trust-inner">
+    <span class="trust-label">Beratende Ingenieure · Mitglied in</span>
+    <ul class="trust-list" role="list">
+      <li><abbr title="Bayerische Ingenieurekammer-Bau">BayIKa-Bau</abbr></li>
+      <li><abbr title="Verband Beratender Ingenieure">VBI</abbr></li>
+      <li><abbr title="Deutscher Verband der Projektmanager in der Bau- und Immobilienwirtschaft">DVP</abbr></li>
+      <li><abbr title="Deutsche Gesellschaft für Nachhaltiges Bauen">DGNB</abbr>-Auditor</li>
+      <li><abbr title="Bewertungssystem Nachhaltiges Bauen (Bund)">BNB</abbr>-Auditor</li>
+      <li>Lehrbeauftragte HS Augsburg</li>
+    </ul>
+  </div>
+</aside>
 
 <!-- MANIFEST -->
 <section id="manifest">
