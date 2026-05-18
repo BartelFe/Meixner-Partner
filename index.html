@@ -18,9 +18,64 @@
 <link rel="apple-touch-icon" href="favicon.svg">
 <meta name="theme-color" content="#0B0B0B">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,300;1,9..144,400&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://meixner-partner.de/#org",
+  "name": "Meixner + Partner Projektentwicklung Projektsteuerung GmbH",
+  "alternateName": "Meixner + Partner",
+  "description": "Beratende Ingenieure für Projektsteuerung und Projektentwicklung im öffentlichen Hochbau. Seit 1996 in Augsburg.",
+  "url": "https://meixner-partner.de",
+  "logo": "https://meixner-partner.de/logo.svg",
+  "telephone": "+49-821-501050",
+  "email": "info@meixner-partner.de",
+  "foundingDate": "1996",
+  "numberOfEmployees": "50",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Gögginger Straße 93",
+    "postalCode": "86199",
+    "addressLocality": "Augsburg",
+    "addressRegion": "Bayern",
+    "addressCountry": "DE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 48.3521637,
+    "longitude": 10.8806739
+  },
+  "areaServed": [
+    { "@type": "State", "name": "Bayern" },
+    { "@type": "State", "name": "Baden-Württemberg" }
+  ],
+  "knowsAbout": [
+    "Projektsteuerung",
+    "Projektleitung",
+    "Projektentwicklung",
+    "Machbarkeitsstudien",
+    "VgV-Vergabeverfahren",
+    "Architektenwettbewerbe",
+    "Nachhaltigkeitsberatung",
+    "DGNB-Zertifizierung",
+    "BNB-Zertifizierung",
+    "AHO",
+    "HOAI"
+  ],
+  "memberOf": [
+    { "@type": "Organization", "name": "Bayerische Ingenieurekammer-Bau" },
+    { "@type": "Organization", "name": "Verband Beratender Ingenieure (VBI)" },
+    { "@type": "Organization", "name": "Deutscher Verband der Projektmanager in der Bau- und Immobilienwirtschaft (DVP)" }
+  ],
+  "founder": [
+    { "@type": "Person", "name": "Max Meixner", "jobTitle": "Gründer & Geschäftsführer" }
+  ]
+}
+</script>
+
+<link rel="preload" href="fonts/Fraunces-VariableFont.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts/fonts.css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -1318,6 +1373,32 @@ footer{
 }
 .foot-logo em{font-family:var(--ff-italic);font-style:italic;font-weight:400}
 .foot-tag{font-family:var(--ff-body);font-size:14px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:32ch}
+.foot-legal{
+  font-family:var(--ff-mono);font-size:10px;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(255,255,255,0.4);margin-top:6px;
+}
+.cc{
+  position:fixed;bottom:20px;left:20px;right:20px;
+  z-index:9700;max-width:580px;margin:0 auto;
+  background:var(--ink);color:#fff;border-radius:6px;
+  padding:18px 22px;
+  box-shadow:0 24px 60px rgba(0,0,0,0.3);
+  font-family:var(--ff-body);font-size:13px;line-height:1.6;
+  transform:translateY(120%);transition:transform 0.5s var(--ease);
+}
+.cc[data-show="1"]{transform:translateY(0)}
+.cc-inner{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.cc-text{flex:1;min-width:260px;color:rgba(255,255,255,0.85)}
+.cc-text a{color:#fff;border-bottom:1px solid rgba(255,255,255,0.4)}
+.cc-btn{
+  padding:10px 20px;border-radius:100px;
+  background:#fff;color:var(--ink);
+  font-family:var(--ff-mono);font-size:11px;
+  letter-spacing:0.14em;text-transform:uppercase;
+  border:none;cursor:pointer;transition:background 0.3s,color 0.3s;
+}
+.cc-btn:hover{background:var(--blue);color:#fff}
 .foot-socials{display:flex;gap:10px;margin-top:8px}
 .foot-soc{
   width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,0.15);
@@ -2324,8 +2405,9 @@ footer{
   <div class="foot-inner">
     <div class="foot-grid">
       <div class="foot-brand">
-        <div class="foot-logo">Meixner <em>&amp;</em> Partner</div>
-        <p class="foot-tag">Projektsteuerung und Projektentwicklung für komplexe öffentliche Bauvorhaben. Seit 1996 in Augsburg.</p>
+        <div class="foot-logo">Meixner <em>+</em> Partner</div>
+        <p class="foot-tag">Meixner + Partner Projektentwicklung Projektsteuerung GmbH. Beratende Ingenieure seit 1996 — Augsburg, für Bayern und Baden-Württemberg.</p>
+        <p class="foot-legal"><span>HRB AG Augsburg 19614</span> · <span>USt-ID DE226852359</span></p>
         <div class="foot-socials">
           <a href="#" class="foot-soc" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19a.66.66 0 0 0 0 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
@@ -2361,8 +2443,8 @@ footer{
         <a href="#manifest">Über uns</a>
         <a href="#jobs">Karriere</a>
         <a href="#kontakt">Kontakt</a>
-        <a href="https://www.meixner-partner.de/impressum/" target="_blank" rel="noopener">Impressum</a>
-        <a href="https://www.meixner-partner.de/datenschutz/" target="_blank" rel="noopener">Datenschutz</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
       </div>
     </div>
     <div class="foot-big" aria-hidden="true"><span class="foot-big-inner" id="footBig">Meixner &amp; Partner</span></div>
@@ -2989,6 +3071,32 @@ setTimeout(() => {
   }
 }, 6000);
 
+/* ==========================================================================
+   COOKIE CONSENT
+   ========================================================================== */
+(function(){
+  const cc = document.getElementById('cc');
+  const btn = document.getElementById('ccOk');
+  if(!cc || !btn) return;
+  const KEY = 'mp_cc_v1';
+  if(localStorage.getItem(KEY) === '1') return;
+  cc.hidden = false;
+  setTimeout(() => cc.dataset.show = '1', 800);
+  btn.addEventListener('click', () => {
+    localStorage.setItem(KEY, '1');
+    cc.dataset.show = '0';
+    setTimeout(() => { cc.hidden = true; }, 600);
+  });
+})();
+
 </script>
+
+<!-- COOKIE CONSENT -->
+<div id="cc" class="cc" role="dialog" aria-label="Cookie-Hinweis" aria-live="polite" hidden>
+  <div class="cc-inner">
+    <p class="cc-text">Diese Website verwendet ausschließlich technisch notwendige Funktionen. Wir setzen keine Tracking- oder Marketing-Cookies. Schriftarten werden lokal ausgeliefert. Mehr in der <a href="datenschutz.html" class="linehover">Datenschutzerklärung</a>.</p>
+    <button id="ccOk" class="cc-btn" aria-label="Hinweis schließen">Verstanden</button>
+  </div>
+</div>
 </body>
 </html>
