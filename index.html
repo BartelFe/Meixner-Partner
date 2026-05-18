@@ -1105,83 +1105,60 @@ button{font-family:inherit;cursor:none;background:none;border:none;color:inherit
 }
 
 /* ==========================================================================
-   TESTIMONIALS
+   AUFTRAGGEBER — Logo Wall
    ========================================================================== */
-#testimonials{
+#auftraggeber{
   background:var(--paper);
   padding:clamp(90px,12vw,160px) var(--pad);
   overflow:hidden;
 }
-.test-inner{max-width:var(--max);margin:0 auto}
-.test-head{
-  display:grid;grid-template-columns:1fr auto;gap:32px;
+.auft-inner{max-width:var(--max);margin:0 auto}
+.auft-head{
+  display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(32px,5vw,80px);
   margin-bottom:clamp(48px,6vw,80px);align-items:end;
 }
-.test-title{
+.auft-title{
   font-family:var(--ff-display);font-weight:300;
   font-variation-settings:"opsz" 144;
   font-size:clamp(36px,5.5vw,88px);line-height:0.95;letter-spacing:-0.035em;
 }
-.test-title em{font-style:italic;font-family:var(--ff-italic);color:var(--blue);font-weight:300}
-.test-nav{display:flex;gap:8px}
-.test-btn{
-  width:52px;height:52px;border-radius:50%;
-  border:1px solid var(--line);background:transparent;
+.auft-title em{font-style:italic;font-family:var(--ff-italic);color:var(--blue);font-weight:300}
+.auft-intro{
+  font-family:var(--ff-body);font-size:15px;line-height:1.75;
+  color:var(--ink-60);max-width:42ch;
+}
+.auft-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--line);border-left:1px solid var(--line);
+}
+.auft-cell{
+  border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  aspect-ratio:16/9;
   display:flex;align-items:center;justify-content:center;
-  transition:all 0.3s var(--ease);
-}
-.test-btn:hover{background:var(--ink);border-color:var(--ink)}
-.test-btn:hover svg{stroke:var(--paper)}
-.test-btn svg{width:14px;height:14px;stroke:var(--ink);fill:none;stroke-width:1.5;transition:stroke 0.3s}
-.test-track-wrap{overflow:hidden}
-.test-track{
-  display:flex;gap:clamp(20px,2.5vw,32px);
-  transition:transform 0.8s var(--ease);
-}
-.test-card{
-  flex:0 0 calc(33.333% - clamp(14px,1.7vw,22px));
-  padding:clamp(32px,3.5vw,48px);
+  padding:clamp(24px,3vw,40px);
   background:#fff;
-  border:1px solid var(--line);
-  border-radius:4px;
-  display:flex;flex-direction:column;gap:24px;
-  position:relative;
-  transition:transform 0.5s var(--ease), box-shadow 0.5s;
+  transition:background 0.4s var(--ease);
 }
-.test-card:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(11,11,11,0.08)}
-.test-quote{
-  font-family:var(--ff-display);font-weight:400;
-  font-variation-settings:"opsz" 36;
-  font-size:clamp(16px,1.5vw,20px);line-height:1.5;letter-spacing:-0.01em;
-  color:var(--ink);
-  flex:1;
+.auft-cell:hover{background:var(--paper-2)}
+.auft-cell img{
+  max-width:75%;max-height:60%;width:auto;height:auto;
+  object-fit:contain;
+  filter:grayscale(1) brightness(0.4) contrast(1.2);
+  opacity:0.75;
+  transition:opacity 0.3s, filter 0.3s;
 }
-.test-quote::before{
-  content:'"';font-family:var(--ff-display);font-size:64px;
-  color:var(--blue);line-height:0.6;display:block;margin-bottom:12px;
-  font-feature-settings:"ss01";
+.auft-cell:hover img{opacity:1;filter:grayscale(1) brightness(0) contrast(1.2)}
+.auft-footnote{
+  margin-top:clamp(24px,3vw,40px);
+  font-family:var(--ff-body);font-size:14px;color:var(--ink-60);
+  text-align:center;
 }
-.test-person{
-  display:flex;align-items:center;gap:14px;
-  padding-top:20px;border-top:1px solid var(--line);
+@media(max-width:900px){
+  .auft-head{grid-template-columns:1fr;gap:24px;align-items:start}
+  .auft-grid{grid-template-columns:repeat(2,1fr)}
 }
-.test-avatar{
-  width:46px;height:46px;border-radius:50%;overflow:hidden;
-  background:var(--paper-2);flex-shrink:0;
-  font-family:var(--ff-display);font-weight:400;font-size:18px;
-  display:flex;align-items:center;justify-content:center;
-  color:var(--ink-60);
-}
-.test-avatar img{width:100%;height:100%;object-fit:cover}
-.test-name{font-family:var(--ff-display);font-size:16px;font-weight:500;line-height:1.2}
-.test-role{font-family:var(--ff-mono);font-size:10px;color:var(--ink-60);letter-spacing:0.1em;text-transform:uppercase;margin-top:4px}
-.test-dots{display:flex;gap:8px;margin-top:32px}
-.test-dot{width:8px;height:8px;border-radius:50%;background:var(--line);transition:all 0.3s;cursor:none}
-.test-dot.on{background:var(--ink);width:28px;border-radius:4px}
-@media(max-width:1100px){.test-card{flex:0 0 calc(50% - 12px)}}
-@media(max-width:700px){
-  .test-card{flex:0 0 100%}
-  .test-head{grid-template-columns:1fr;align-items:start}
+@media(max-width:480px){
+  .auft-grid{grid-template-columns:1fr}
 }
 
 /* ==========================================================================
@@ -2208,74 +2185,45 @@ footer{
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="test-inner">
-    <div class="test-head">
+<!-- AUFTRAGGEBER — LOGO WALL -->
+<section id="auftraggeber" aria-label="Auftraggeber">
+  <div class="auft-inner">
+    <header class="auft-head">
       <div>
-        <span class="eyebrow">§ 05 — Stimmen</span>
-        <h2 class="test-title rv" style="margin-top:14px">Was Partner <em>sagen.</em></h2>
+        <span class="eyebrow">§ 06 — Auftraggeber</span>
+        <h2 class="auft-title rv">Im Auftrag von <em>öffentlicher Hand</em><br>und Institutionen.</h2>
       </div>
-      <div class="test-nav">
-        <button class="test-btn" id="tPrev" aria-label="Zurück"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
-        <button class="test-btn" id="tNext" aria-label="Weiter"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+      <p class="auft-intro rv rv-d1">Städte, Kommunen, Landkreise, Hochschulen, Forschungseinrichtungen, kirchliche Träger und Denkmalbehörden. Unsere Projekte entstehen für Auftraggeber, die in Generationen denken.</p>
+    </header>
+
+    <div class="auft-grid">
+      <div class="auft-cell">
+        <img src="logos/lhm.png" alt="Landeshauptstadt München" loading="lazy">
       </div>
-    </div>
-    <div class="test-track-wrap">
-      <div class="test-track" id="tTrack">
-        <div class="test-card">
-          <p class="test-quote">Meixner + Partner begleiten uns durch ein technisch hochkomplexes Vorhaben. Die Kommunikation ist klar, die Terminplanung belastbar und das Kostencontrolling präzise.</p>
-          <div class="test-person">
-            <div class="test-avatar">A</div>
-            <div>
-              <p class="test-name">Dr. Andrea Schmidt</p>
-              <p class="test-role">Bauherrenvertretung · Stadt Augsburg</p>
-            </div>
-          </div>
-        </div>
-        <div class="test-card">
-          <p class="test-quote">Seit über einer Dekade arbeiten wir zusammen. Was uns überzeugt: Sie denken in Dekaden, nicht in Quartalen. Genau das brauchen öffentliche Bauvorhaben.</p>
-          <div class="test-person">
-            <div class="test-avatar">M</div>
-            <div>
-              <p class="test-name">Martin Huber</p>
-              <p class="test-role">Hochbauamt · Landratsamt Aichach-Friedberg</p>
-            </div>
-          </div>
-        </div>
-        <div class="test-card">
-          <p class="test-quote">Ein Team, das auch bei 30 parallelen Gewerken nicht den Überblick verliert. Die Kostentreue über die gesamte Projektdauer war beispielhaft.</p>
-          <div class="test-person">
-            <div class="test-avatar">K</div>
-            <div>
-              <p class="test-name">Prof. Dr. Klaus Weber</p>
-              <p class="test-role">Leitung Bauamt · HS Augsburg</p>
-            </div>
-          </div>
-        </div>
-        <div class="test-card">
-          <p class="test-quote">Die VgV-Begleitung durch Meixner + Partner war juristisch einwandfrei und hat uns ermöglicht, den besten Planer für das Projekt zu finden.</p>
-          <div class="test-person">
-            <div class="test-avatar">S</div>
-            <div>
-              <p class="test-name">Stefanie Vogel</p>
-              <p class="test-role">Kämmerin · Gemeinde Odelzhausen</p>
-            </div>
-          </div>
-        </div>
-        <div class="test-card">
-          <p class="test-quote">Ein verlässlicher Partner für die Denkmalsanierung. Respekt vor dem Bestand, Klarheit in der Kommunikation, Präzision bei der Umsetzung.</p>
-          <div class="test-person">
-            <div class="test-avatar">T</div>
-            <div>
-              <p class="test-name">Thomas Bachmann</p>
-              <p class="test-role">Denkmalpflege · Bayern</p>
-            </div>
-          </div>
-        </div>
+      <div class="auft-cell">
+        <img src="logos/stadt-ingolstadt.png" alt="Stadt Ingolstadt" loading="lazy">
+      </div>
+      <div class="auft-cell">
+        <img src="logos/hwk-schwaben.png" alt="Handwerkskammer für Schwaben" loading="lazy">
+      </div>
+      <div class="auft-cell">
+        <img src="logos/dlr.svg" alt="Deutsches Zentrum für Luft- und Raumfahrt" loading="lazy">
+      </div>
+      <div class="auft-cell">
+        <img src="logos/uni-wuerzburg.png" alt="Julius-Maximilians-Universität Würzburg" loading="lazy">
+      </div>
+      <div class="auft-cell">
+        <img src="logos/klinikum-aschaffenburg.jpg" alt="Klinikum Aschaffenburg-Alzenau" loading="lazy">
+      </div>
+      <div class="auft-cell">
+        <img src="logos/blfd.svg" alt="Bayerisches Landesamt für Denkmalpflege" loading="lazy">
+      </div>
+      <div class="auft-cell">
+        <img src="logos/stadt-augsburg.jpg" alt="Stadt Augsburg" loading="lazy">
       </div>
     </div>
-    <div class="test-dots" id="tDots"></div>
+
+    <p class="auft-footnote rv">Eine Auswahl. Vollständige Referenzlisten auf Anfrage — <a href="#kontakt" class="linehover">Kontakt aufnehmen</a>.</p>
   </div>
 </section>
 
@@ -2973,61 +2921,6 @@ function setupRefScroll(){
   }
   refSTrigger = anim.scrollTrigger;
 }
-
-/* ==========================================================================
-   14. TESTIMONIALS SLIDER
-   ========================================================================== */
-(function(){
-  const track = document.getElementById('tTrack');
-  const prev = document.getElementById('tPrev');
-  const next = document.getElementById('tNext');
-  const dotsWrap = document.getElementById('tDots');
-  if(!track) return;
-  const cards = track.querySelectorAll('.test-card');
-  let idx = 0;
-
-  function getPerView(){
-    if(window.innerWidth <= 700) return 1;
-    if(window.innerWidth <= 1100) return 2;
-    return 3;
-  }
-  function buildDots(){
-    dotsWrap.innerHTML = '';
-    const pv = getPerView();
-    const pages = Math.max(1, cards.length - pv + 1);
-    for(let i=0;i<pages;i++){
-      const d = document.createElement('button');
-      d.className = 'test-dot';
-      if(i===idx) d.classList.add('on');
-      d.addEventListener('click', () => { idx = i; update(); });
-      dotsWrap.appendChild(d);
-    }
-  }
-  function update(){
-    const pv = getPerView();
-    const max = Math.max(0, cards.length - pv);
-    if(idx > max) idx = max;
-    if(idx < 0) idx = 0;
-    const style = getComputedStyle(track);
-    const gap = parseFloat(style.gap) || 24;
-    const cw = cards[0].offsetWidth + gap;
-    track.style.transform = `translateX(${-idx * cw}px)`;
-    dotsWrap.querySelectorAll('.test-dot').forEach((d,i) => d.classList.toggle('on', i===idx));
-  }
-  prev.addEventListener('click', () => { idx--; update(); });
-  next.addEventListener('click', () => { idx++; update(); });
-  window.addEventListener('resize', () => { buildDots(); update(); }, {passive:true});
-  let sx=0, moved=false;
-  track.addEventListener('touchstart', e => { sx = e.touches[0].clientX; moved=false; }, {passive:true});
-  track.addEventListener('touchmove', e => { if(Math.abs(e.touches[0].clientX - sx) > 30) moved=true; }, {passive:true});
-  track.addEventListener('touchend', e => {
-    if(!moved) return;
-    const d = sx - e.changedTouches[0].clientX;
-    if(Math.abs(d) > 40){ idx += d > 0 ? 1 : -1; update(); }
-  });
-  buildDots();
-  update();
-})();
 
 /* ==========================================================================
    15. FOOTER BIG NAME — fit + parallax
