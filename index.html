@@ -1034,6 +1034,41 @@ button{font-family:inherit;cursor:none;background:none;border:none;color:inherit
   letter-spacing:0.08em;display:flex;gap:12px;align-items:center;
 }
 .ref-card-sub span:not(:last-child)::after{content:'';display:inline-block;width:3px;height:3px;background:currentColor;border-radius:50%;margin-left:12px;vertical-align:middle}
+.ref-card-client{
+  font-family:var(--ff-display);font-weight:400;
+  font-variation-settings:"opsz" 24;
+  font-size:13px;line-height:1.4;
+  color:rgba(255,255,255,0.85);
+  font-style:italic;
+  padding-top:6px;border-top:1px solid rgba(255,255,255,0.1);
+}
+.ref-listing{
+  background:var(--ink);color:#fff;
+  padding:clamp(40px,5vw,72px) var(--pad) clamp(60px,7vw,90px);
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+.ref-listing-inner{max-width:var(--max);margin:0 auto;display:flex;flex-direction:column;gap:clamp(24px,3vw,40px)}
+.ref-listing-grid{
+  list-style:none;display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(12px,1.5vw,22px);padding:0;margin:0;
+}
+.ref-listing-grid li{
+  padding:18px 0;border-top:1px solid rgba(255,255,255,0.1);
+  font-family:var(--ff-body);font-size:14px;line-height:1.5;
+  color:rgba(255,255,255,0.7);
+}
+.ref-listing-grid li strong{
+  font-family:var(--ff-display);font-weight:500;
+  font-variation-settings:"opsz" 24;color:#fff;
+  display:block;margin-bottom:3px;letter-spacing:-0.005em;font-size:15px;
+}
+.ref-listing-grid li span{
+  font-family:var(--ff-mono);font-size:10px;
+  color:var(--blue-bright);letter-spacing:0.14em;
+  text-transform:uppercase;
+}
+@media(max-width:900px){.ref-listing-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ref-listing-grid{grid-template-columns:1fr}}
 
 /* Giant ghost type behind cards */
 .ref-ghost{
@@ -1986,49 +2021,49 @@ footer{
     <div class="ref-head-meta">
       <span>§ 03 — Projekte</span>
       <span class="ref-head-count">12<em>/100+</em></span>
-      <span>Auswahl · 2014–2025</span>
+      <span>Auswahl realisierter Vorhaben</span>
     </div>
   </div>
   <div class="ref-pin" id="refPin">
     <div class="ref-ghost" aria-hidden="true">Referenzen</div>
     <div class="ref-track" id="refTrack">
-      <!-- project cards -->
+
       <article class="ref-card" data-cursor="view">
         <div class="ref-card-img">
           <span class="ref-card-num">01</span>
           <span class="ref-card-cat">Bildung</span>
-          <span class="ref-card-year">2024</span>
           <img src="https://www.meixner-partner.de/wp-content/uploads/2020/07/awb_bildung_neu.jpg" alt="Schulzentrum Odelzhausen" loading="lazy">
         </div>
         <div class="ref-card-info">
           <h3 class="ref-card-title">Schulzentrum Odelzhausen</h3>
-          <p class="ref-card-sub"><span>Neubau</span><span>Odelzhausen</span><span>€ 28 Mio.</span></p>
+          <p class="ref-card-sub"><span>Neubau · Schulzentrum</span><span>Odelzhausen</span></p>
+          <p class="ref-card-client">Zweckverband Grund- und Mittelschule Odelzhausen</p>
         </div>
       </article>
 
       <article class="ref-card" data-cursor="view">
         <div class="ref-card-img">
           <span class="ref-card-num">02</span>
-          <span class="ref-card-cat">Denkmal</span>
-          <span class="ref-card-year">2023</span>
-          <img src="https://images.unsplash.com/photo-1605647540924-852290f6b0d5?w=900&q=80" alt="Denkmalpflegeprojekt" loading="lazy">
+          <span class="ref-card-cat">Bildung</span>
+          <img src="https://images.unsplash.com/photo-1592280771190-3e2e4d571952?w=900&q=80" alt="Schulen Orleansstraße" loading="lazy">
         </div>
         <div class="ref-card-info">
-          <h3 class="ref-card-title">Sanierung Staatsarchiv</h3>
-          <p class="ref-card-sub"><span>Denkmal</span><span>Augsburg</span><span>€ 14 Mio.</span></p>
+          <h3 class="ref-card-title">Schulen Orleansstraße</h3>
+          <p class="ref-card-sub"><span>Schulbau</span><span>München</span></p>
+          <p class="ref-card-client">Landeshauptstadt München</p>
         </div>
       </article>
 
       <article class="ref-card" data-cursor="view">
         <div class="ref-card-img">
           <span class="ref-card-num">03</span>
-          <span class="ref-card-cat">Museum</span>
-          <span class="ref-card-year">2022</span>
-          <img src="https://images.unsplash.com/photo-1565372195458-9de0b320ef04?w=900&q=80" alt="Museumsneubau" loading="lazy">
+          <span class="ref-card-cat">Verwaltung</span>
+          <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=900&q=80" alt="Akademie und Servicezentrum HWK" loading="lazy">
         </div>
         <div class="ref-card-info">
-          <h3 class="ref-card-title">Museum der Moderne</h3>
-          <p class="ref-card-sub"><span>Neubau</span><span>München</span><span>€ 42 Mio.</span></p>
+          <h3 class="ref-card-title">Akademie + Servicezentrum</h3>
+          <p class="ref-card-sub"><span>Neubau · Verwaltung</span><span>Augsburg</span></p>
+          <p class="ref-card-client">Handwerkskammer für Schwaben</p>
         </div>
       </article>
 
@@ -2036,72 +2071,140 @@ footer{
         <div class="ref-card-img">
           <span class="ref-card-num">04</span>
           <span class="ref-card-cat">Verwaltung</span>
-          <span class="ref-card-year">2022</span>
-          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&q=80" alt="Rathauserweiterung" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&q=80" alt="Finanz- und Gesundheitszentrum Friedberg" loading="lazy">
         </div>
         <div class="ref-card-info">
-          <h3 class="ref-card-title">Rathauserweiterung Friedberg</h3>
-          <p class="ref-card-sub"><span>Erweiterung</span><span>Friedberg</span><span>€ 19 Mio.</span></p>
+          <h3 class="ref-card-title">Finanz- und Gesundheitszentrum</h3>
+          <p class="ref-card-sub"><span>Neubau · Mischnutzung</span><span>Friedberg</span></p>
+          <p class="ref-card-client">Stadt Friedberg</p>
         </div>
       </article>
 
       <article class="ref-card" data-cursor="view">
         <div class="ref-card-img">
           <span class="ref-card-num">05</span>
-          <span class="ref-card-cat">Forschung</span>
-          <span class="ref-card-year">2021</span>
-          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&q=80" alt="Forschungslabor" loading="lazy">
+          <span class="ref-card-cat">Denkmal</span>
+          <img src="https://images.unsplash.com/photo-1605647540924-852290f6b0d5?w=900&q=80" alt="Kloster Roggenburg" loading="lazy">
         </div>
         <div class="ref-card-info">
-          <h3 class="ref-card-title">Forschungszentrum Medizin</h3>
-          <p class="ref-card-sub"><span>Neubau</span><span>Augsburg</span><span>€ 67 Mio.</span></p>
+          <h3 class="ref-card-title">Kloster Roggenburg</h3>
+          <p class="ref-card-sub"><span>Sanierung · Neubau</span><span>Roggenburg</span></p>
+          <p class="ref-card-client">Prämonstratenser Kloster Roggenburg</p>
         </div>
       </article>
 
       <article class="ref-card" data-cursor="view">
         <div class="ref-card-img">
           <span class="ref-card-num">06</span>
-          <span class="ref-card-cat">Gesundheit</span>
-          <span class="ref-card-year">2021</span>
-          <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=900&q=80" alt="Klinikneubau" loading="lazy">
+          <span class="ref-card-cat">Denkmal · Museum</span>
+          <img src="https://images.unsplash.com/photo-1565372195458-9de0b320ef04?w=900&q=80" alt="Museum für Konkrete Kunst und Design" loading="lazy">
         </div>
         <div class="ref-card-info">
-          <h3 class="ref-card-title">Klinik St. Elisabeth</h3>
-          <p class="ref-card-sub"><span>Sanierung</span><span>Landsberg</span><span>€ 31 Mio.</span></p>
+          <h3 class="ref-card-title">Museum für Konkrete Kunst &amp; Design</h3>
+          <p class="ref-card-sub"><span>Sanierung · Umnutzung</span><span>Ingolstadt</span></p>
+          <p class="ref-card-client">Stadt Ingolstadt</p>
         </div>
       </article>
 
       <article class="ref-card" data-cursor="view">
         <div class="ref-card-img">
           <span class="ref-card-num">07</span>
-          <span class="ref-card-cat">Bildung</span>
-          <span class="ref-card-year">2020</span>
-          <img src="https://images.unsplash.com/photo-1592280771190-3e2e4d571952?w=900&q=80" alt="Grundschule" loading="lazy">
+          <span class="ref-card-cat">Museum</span>
+          <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=900&q=80" alt="Diether-Kunerth-Museum Ottobeuren" loading="lazy">
         </div>
         <div class="ref-card-info">
-          <h3 class="ref-card-title">Grundschule Aichach</h3>
-          <p class="ref-card-sub"><span>Neubau</span><span>Aichach</span><span>€ 12 Mio.</span></p>
+          <h3 class="ref-card-title">Diether-Kunerth-Museum</h3>
+          <p class="ref-card-sub"><span>Museumsneubau</span><span>Ottobeuren</span></p>
+          <p class="ref-card-client">Markt Ottobeuren</p>
         </div>
       </article>
 
       <article class="ref-card" data-cursor="view">
         <div class="ref-card-img">
           <span class="ref-card-num">08</span>
-          <span class="ref-card-cat">Kultur</span>
-          <span class="ref-card-year">2019</span>
-          <img src="https://images.unsplash.com/photo-1526041092449-209d556f7a32?w=900&q=80" alt="Kulturzentrum" loading="lazy">
+          <span class="ref-card-cat">Museum</span>
+          <img src="https://images.unsplash.com/photo-1526041092449-209d556f7a32?w=900&q=80" alt="Museumsdepot der Landeshauptstadt München" loading="lazy">
         </div>
         <div class="ref-card-info">
-          <h3 class="ref-card-title">Kulturzentrum Schwaben</h3>
-          <p class="ref-card-sub"><span>Neubau</span><span>Günzburg</span><span>€ 22 Mio.</span></p>
+          <h3 class="ref-card-title">Museumsdepot</h3>
+          <p class="ref-card-sub"><span>Spezialbau</span><span>München</span></p>
+          <p class="ref-card-client">Landeshauptstadt München</p>
         </div>
       </article>
+
+      <article class="ref-card" data-cursor="view">
+        <div class="ref-card-img">
+          <span class="ref-card-num">09</span>
+          <span class="ref-card-cat">Gesundheit</span>
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&q=80" alt="Zentrum für Innere Medizin Würzburg" loading="lazy">
+        </div>
+        <div class="ref-card-info">
+          <h3 class="ref-card-title">Zentrum für Innere Medizin</h3>
+          <p class="ref-card-sub"><span>Klinikneubau</span><span>Würzburg</span></p>
+          <p class="ref-card-client">Universitätsklinikum Würzburg</p>
+        </div>
+      </article>
+
+      <article class="ref-card" data-cursor="view">
+        <div class="ref-card-img">
+          <span class="ref-card-num">10</span>
+          <span class="ref-card-cat">Gesundheit</span>
+          <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=900&q=80" alt="Klinikum Aschaffenburg" loading="lazy">
+        </div>
+        <div class="ref-card-info">
+          <h3 class="ref-card-title">Klinikum Aschaffenburg</h3>
+          <p class="ref-card-sub"><span>Klinik · Sanierung</span><span>Aschaffenburg</span></p>
+          <p class="ref-card-client">Klinikum Aschaffenburg-Alzenau</p>
+        </div>
+      </article>
+
+      <article class="ref-card" data-cursor="view">
+        <div class="ref-card-img">
+          <span class="ref-card-num">11</span>
+          <span class="ref-card-cat">Forschung</span>
+          <img src="https://images.unsplash.com/photo-1518005068251-37900150dfca?w=900&q=80" alt="SG 900 DLR Augsburg" loading="lazy">
+        </div>
+        <div class="ref-card-info">
+          <h3 class="ref-card-title">SG 900 — DLR Augsburg</h3>
+          <p class="ref-card-sub"><span>Forschungsbau</span><span>Augsburg</span></p>
+          <p class="ref-card-client">Deutsches Zentrum für Luft- und Raumfahrt</p>
+        </div>
+      </article>
+
+      <article class="ref-card" data-cursor="view">
+        <div class="ref-card-img">
+          <span class="ref-card-num">12</span>
+          <span class="ref-card-cat">Forschung</span>
+          <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?w=900&q=80" alt="Gebäude E6 Universität Würzburg" loading="lazy">
+        </div>
+        <div class="ref-card-info">
+          <h3 class="ref-card-title">Gebäude E6</h3>
+          <p class="ref-card-sub"><span>Forschungsneubau</span><span>Würzburg</span></p>
+          <p class="ref-card-client">Julius-Maximilians-Universität Würzburg</p>
+        </div>
+      </article>
+
     </div>
   </div>
   <div class="ref-foot">
     <span>Drag / Scroll →</span>
     <div class="ref-foot-line" style="--ref-p:0%"></div>
     <span>Alle Projekte ansehen →</span>
+  </div>
+
+  <!-- Weitere Vorhaben — kompakte Liste, kein Card-Layout -->
+  <div class="ref-listing">
+    <div class="ref-listing-inner">
+      <span class="eyebrow eyebrow--light">Weitere Vorhaben</span>
+      <ul class="ref-listing-grid">
+        <li><strong>Schulen Bernaysstraße</strong> · Landeshauptstadt München · <span>Bildung</span></li>
+        <li><strong>BTZ Augsburg</strong> · Handwerkskammer für Schwaben · <span>Bildung</span></li>
+        <li><strong>Fleischerschule Augsburg</strong> · Fleischerverband Augsburg · <span>Bildung</span></li>
+        <li><strong>Schulzentrum Ottobeuren</strong> · Markt Ottobeuren · <span>Bildung</span></li>
+        <li><strong>Verwaltungsgebäude PTG</strong> · Privat · <span>Verwaltung</span></li>
+        <li><strong>Fohlenhof Steingaden</strong> · Markt Steingaden · <span>Denkmal</span></li>
+      </ul>
+    </div>
   </div>
 </section>
 
