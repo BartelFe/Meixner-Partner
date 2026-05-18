@@ -1379,23 +1379,23 @@ footer{
 <div class="stats" aria-label="Kennzahlen">
   <div class="stat">
     <span class="stat-label" data-n="01">Jahre Erfahrung</span>
-    <span class="stat-num" data-target="28" data-suffix="+">0</span>
-    <span class="stat-desc">Seit 1996 in Augsburg tätig — über drei Dekaden Projektsteuerung.</span>
+    <span class="stat-num" data-target="30">0</span>
+    <span class="stat-desc">Seit 1996 in Augsburg — drei Dekaden Projektsteuerung im öffentlichen Hochbau.</span>
   </div>
   <div class="stat">
-    <span class="stat-label" data-n="02">Abgeschlossene Projekte</span>
-    <span class="stat-num" data-target="100" data-suffix="+">0</span>
-    <span class="stat-desc">Von Schulen und Museen bis Forschung und Verwaltung.</span>
+    <span class="stat-label" data-n="02">Ausgewählte Referenzen</span>
+    <span class="stat-num" data-target="20" data-suffix="+">0</span>
+    <span class="stat-desc">Über 100 realisierte Vorhaben in Bayern und Baden-Württemberg — eine Auswahl auf dieser Seite.</span>
   </div>
   <div class="stat">
     <span class="stat-label" data-n="03">Projektsektoren</span>
     <span class="stat-num" data-target="6">0</span>
-    <span class="stat-desc">Bildung, Verwaltung, Denkmal, Museen, Forschung, Gesundheit.</span>
+    <span class="stat-desc">Bildung · Verwaltung · Denkmal · Museen · Forschung · Gesundheit.</span>
   </div>
   <div class="stat">
-    <span class="stat-label" data-n="04">Lehraufträge HS Augsburg</span>
-    <span class="stat-num" data-target="2">0</span>
-    <span class="stat-desc">Wissenstransfer an die nächste Generation — seit 2014.</span>
+    <span class="stat-label" data-n="04">Mitarbeiter:innen</span>
+    <span class="stat-num" data-target="50" data-prefix="~">0</span>
+    <span class="stat-desc">Architekt:innen, Ingenieur:innen, kaufmännische Angestellte und Projektassistenz — als Familienunternehmen.</span>
   </div>
 </div>
 
@@ -2373,12 +2373,13 @@ function playHeroIn(){
       const el = e.target;
       const target = parseInt(el.dataset.target, 10);
       const suffix = el.dataset.suffix || '';
+      const prefix = el.dataset.prefix || '';
       const duration = 1500;
       const start = performance.now();
       function tick(t){
         const p = Math.min((t - start)/duration, 1);
         const eased = 1 - Math.pow(1-p, 3);
-        el.textContent = Math.round(target * eased) + suffix;
+        el.textContent = prefix + Math.round(target * eased) + suffix;
         if(p < 1) requestAnimationFrame(tick);
       }
       requestAnimationFrame(tick);
