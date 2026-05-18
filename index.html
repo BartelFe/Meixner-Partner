@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Meixner + Partner — Projektsteuerung für bleibende Architektur</title>
-<meta name="description" content="Seit 1996 steuern wir komplexe Bauvorhaben im öffentlichen Sektor. Mit Präzision, Erfahrung und 100+ realisierten Projekten. Meixner + Partner, Augsburg.">
+<title>Meixner + Partner · Projektsteuerung & Projektentwicklung · Augsburg</title>
+<meta name="description" content="Meixner + Partner: Projektsteuerung & Projektentwicklung für den öffentlichen Hochbau. Seit 1996 in Augsburg. Bildung, Verwaltung, Denkmal, Museen, Forschung, Gesundheit.">
 <meta name="robots" content="index, follow">
 <meta property="og:title" content="Meixner + Partner — Projektsteuerung & Projektentwicklung">
 <meta property="og:description" content="Projektsteuerung für öffentliche Bauvorhaben. Seit 1996 in Augsburg.">
@@ -18,9 +18,65 @@
 <link rel="apple-touch-icon" href="favicon.svg">
 <meta name="theme-color" content="#0B0B0B">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;0,9..144,900;1,9..144,300;1,9..144,400&family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&family=Instrument+Sans:ital,wght@0,400;0,500;1,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "@id": "https://meixner-partner.de/#org",
+  "name": "Meixner + Partner Projektentwicklung Projektsteuerung GmbH",
+  "alternateName": "Meixner + Partner",
+  "description": "Beratende Ingenieure für Projektsteuerung und Projektentwicklung im öffentlichen Hochbau. Seit 1996 in Augsburg.",
+  "url": "https://meixner-partner.de",
+  "logo": "https://meixner-partner.de/logo.svg",
+  "telephone": "+49-821-501050",
+  "email": "info@meixner-partner.de",
+  "foundingDate": "1996",
+  "numberOfEmployees": "50",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Gögginger Straße 93",
+    "postalCode": "86199",
+    "addressLocality": "Augsburg",
+    "addressRegion": "Bayern",
+    "addressCountry": "DE"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 48.3521637,
+    "longitude": 10.8806739
+  },
+  "areaServed": [
+    { "@type": "State", "name": "Bayern" },
+    { "@type": "State", "name": "Baden-Württemberg" }
+  ],
+  "knowsAbout": [
+    "Projektsteuerung",
+    "Projektleitung",
+    "Projektentwicklung",
+    "Machbarkeitsstudien",
+    "VgV-Vergabeverfahren",
+    "Architektenwettbewerbe",
+    "Nachhaltigkeitsberatung",
+    "DGNB-Zertifizierung",
+    "BNB-Zertifizierung",
+    "AHO",
+    "HOAI"
+  ],
+  "memberOf": [
+    { "@type": "Organization", "name": "Bayerische Ingenieurekammer-Bau" },
+    { "@type": "Organization", "name": "Verband Beratender Ingenieure (VBI)" },
+    { "@type": "Organization", "name": "Deutscher Verband der Projektmanager in der Bau- und Immobilienwirtschaft (DVP)" }
+  ],
+  "founder": [
+    { "@type": "Person", "name": "Max Meixner", "jobTitle": "Gründer & Geschäftsführer" }
+  ]
+}
+</script>
+
+<link rel="preload" href="fonts/fraunces-v38-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/geist-v5-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/instrument-sans-v4-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts/fonts.css">
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
@@ -544,6 +600,52 @@ button{font-family:inherit;cursor:none;background:none;border:none;color:inherit
 }
 
 /* ==========================================================================
+   TRUST BAR
+   ========================================================================== */
+.trust-bar{
+  background:var(--paper-2);
+  border-bottom:1px solid var(--line);
+  padding:clamp(14px,2vw,22px) var(--pad);
+}
+.trust-inner{
+  max-width:var(--max);margin:0 auto;
+  display:flex;align-items:center;gap:clamp(18px,3vw,40px);
+  flex-wrap:wrap;
+}
+.trust-label{
+  font-family:var(--ff-mono);font-size:10px;
+  letter-spacing:0.16em;text-transform:uppercase;
+  color:var(--ink-60);flex-shrink:0;
+  display:inline-flex;align-items:center;gap:10px;
+}
+.trust-label::before{
+  content:'';width:24px;height:1px;background:currentColor;
+}
+.trust-list{
+  list-style:none;display:flex;gap:clamp(14px,2.5vw,32px);
+  flex-wrap:wrap;align-items:center;margin:0;padding:0;
+}
+.trust-list li{
+  font-family:var(--ff-display);font-weight:500;font-size:14px;
+  font-variation-settings:"opsz" 24;
+  color:var(--ink);letter-spacing:-0.005em;
+  position:relative;
+}
+.trust-list li:not(:last-child)::after{
+  content:'';display:inline-block;
+  width:3px;height:3px;border-radius:50%;
+  background:var(--ink-40);
+  margin-left:clamp(14px,2.5vw,32px);
+  vertical-align:middle;
+}
+.trust-list abbr{text-decoration:none;border:none;cursor:help}
+@media(max-width:700px){
+  .trust-list li:not(:last-child)::after{display:none}
+  .trust-list{gap:14px}
+  .trust-list li{font-size:13px}
+}
+
+/* ==========================================================================
    MANIFEST — large serif statement with word-by-word reveal
    ========================================================================== */
 #manifest{
@@ -612,6 +714,103 @@ button{font-family:inherit;cursor:none;background:none;border:none;color:inherit
   .manifest-tiles{grid-template-columns:1fr 1fr;gap:10px}
   .mtile:nth-child(3){display:none}
   .mtile{margin-top:0!important;aspect-ratio:3/4}
+}
+
+/* ==========================================================================
+   TEAM — Gründerporträt
+   ========================================================================== */
+#team{
+  background:var(--paper);
+  padding:clamp(100px,12vw,160px) var(--pad);
+  border-bottom:1px solid var(--line);
+}
+.team-inner{max-width:var(--max);margin:0 auto}
+.team-head{
+  display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(32px,6vw,80px);
+  margin-bottom:clamp(48px,6vw,80px);align-items:end;
+}
+.team-title{
+  font-family:var(--ff-display);font-weight:300;
+  font-variation-settings:"opsz" 144;
+  font-size:clamp(40px,5.5vw,88px);line-height:0.95;letter-spacing:-0.04em;
+}
+.team-title em{font-style:italic;font-family:var(--ff-italic);color:var(--blue);font-weight:300}
+.team-intro{
+  font-family:var(--ff-body);font-size:15px;line-height:1.75;
+  color:var(--ink-60);max-width:50ch;
+}
+.team-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:clamp(24px,4vw,56px);
+}
+.tperson{
+  display:flex;flex-direction:column;gap:24px;
+  background:#fff;border:1px solid var(--line);
+  padding:clamp(20px,2.5vw,32px);
+  border-radius:4px;
+}
+.tperson-photo{
+  position:relative;aspect-ratio:4/5;overflow:hidden;border-radius:2px;
+  background:var(--paper-2);
+}
+.tperson-photo img{
+  width:100%;height:100%;object-fit:cover;
+  filter:grayscale(0.2) contrast(1.05);
+  transition:filter 0.6s var(--ease), transform 0.8s var(--ease);
+}
+.tperson:hover .tperson-photo img{filter:grayscale(0) contrast(1.1);transform:scale(1.03)}
+.tperson-tag{
+  position:absolute;top:14px;left:14px;
+  font-family:var(--ff-mono);font-size:10px;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:#fff;background:rgba(11,11,11,0.6);
+  backdrop-filter:blur(8px);
+  padding:5px 11px;border-radius:100px;
+}
+.tperson-info{display:flex;flex-direction:column;gap:14px}
+.tperson-role{
+  font-family:var(--ff-mono);font-size:10px;
+  letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-40);
+}
+.tperson-name{
+  font-family:var(--ff-display);font-weight:400;
+  font-variation-settings:"opsz" 72;
+  font-size:clamp(32px,4vw,52px);line-height:0.95;letter-spacing:-0.03em;
+}
+.tperson-name em{font-family:var(--ff-italic);font-style:italic;color:var(--blue);font-weight:400}
+.tperson-bio{
+  font-family:var(--ff-body);font-size:15px;line-height:1.7;
+  color:var(--ink);
+}
+.tperson-creds{
+  list-style:none;display:flex;flex-direction:column;gap:6px;
+  padding-top:14px;border-top:1px solid var(--line);
+}
+.tperson-creds li{
+  font-family:var(--ff-mono);font-size:11px;
+  color:var(--ink-60);letter-spacing:0.04em;
+  display:flex;gap:10px;align-items:baseline;
+}
+.tperson-creds li::before{content:'—';color:var(--blue);flex-shrink:0}
+.tperson-focus{
+  display:flex;gap:14px;align-items:baseline;
+  padding-top:14px;border-top:1px solid var(--line);
+  font-family:var(--ff-body);font-size:13px;color:var(--ink);
+}
+.tperson-focus span{
+  font-family:var(--ff-mono);font-size:10px;
+  letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-40);
+  flex-shrink:0;
+}
+.team-footnote{
+  margin-top:clamp(48px,6vw,80px);
+  padding-top:clamp(28px,3vw,40px);border-top:1px solid var(--line);
+  font-family:var(--ff-body);font-size:14px;color:var(--ink-60);
+  line-height:1.7;max-width:80ch;
+}
+@media(max-width:900px){
+  .team-head{grid-template-columns:1fr;gap:20px}
+  .team-grid{grid-template-columns:1fr;gap:24px}
 }
 
 /* ==========================================================================
@@ -891,6 +1090,41 @@ button{font-family:inherit;cursor:none;background:none;border:none;color:inherit
   letter-spacing:0.08em;display:flex;gap:12px;align-items:center;
 }
 .ref-card-sub span:not(:last-child)::after{content:'';display:inline-block;width:3px;height:3px;background:currentColor;border-radius:50%;margin-left:12px;vertical-align:middle}
+.ref-card-client{
+  font-family:var(--ff-display);font-weight:400;
+  font-variation-settings:"opsz" 24;
+  font-size:13px;line-height:1.4;
+  color:rgba(255,255,255,0.85);
+  font-style:italic;
+  padding-top:6px;border-top:1px solid rgba(255,255,255,0.1);
+}
+.ref-listing{
+  background:var(--ink);color:#fff;
+  padding:clamp(40px,5vw,72px) var(--pad) clamp(60px,7vw,90px);
+  border-top:1px solid rgba(255,255,255,0.08);
+}
+.ref-listing-inner{max-width:var(--max);margin:0 auto;display:flex;flex-direction:column;gap:clamp(24px,3vw,40px)}
+.ref-listing-grid{
+  list-style:none;display:grid;grid-template-columns:repeat(3,1fr);
+  gap:clamp(12px,1.5vw,22px);padding:0;margin:0;
+}
+.ref-listing-grid li{
+  padding:18px 0;border-top:1px solid rgba(255,255,255,0.1);
+  font-family:var(--ff-body);font-size:14px;line-height:1.5;
+  color:rgba(255,255,255,0.7);
+}
+.ref-listing-grid li strong{
+  font-family:var(--ff-display);font-weight:500;
+  font-variation-settings:"opsz" 24;color:#fff;
+  display:block;margin-bottom:3px;letter-spacing:-0.005em;font-size:15px;
+}
+.ref-listing-grid li span{
+  font-family:var(--ff-mono);font-size:10px;
+  color:var(--blue-bright);letter-spacing:0.14em;
+  text-transform:uppercase;
+}
+@media(max-width:900px){.ref-listing-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.ref-listing-grid{grid-template-columns:1fr}}
 
 /* Giant ghost type behind cards */
 .ref-ghost{
@@ -927,83 +1161,60 @@ button{font-family:inherit;cursor:none;background:none;border:none;color:inherit
 }
 
 /* ==========================================================================
-   TESTIMONIALS
+   AUFTRAGGEBER — Logo Wall
    ========================================================================== */
-#testimonials{
+#auftraggeber{
   background:var(--paper);
   padding:clamp(90px,12vw,160px) var(--pad);
   overflow:hidden;
 }
-.test-inner{max-width:var(--max);margin:0 auto}
-.test-head{
-  display:grid;grid-template-columns:1fr auto;gap:32px;
+.auft-inner{max-width:var(--max);margin:0 auto}
+.auft-head{
+  display:grid;grid-template-columns:1.4fr 1fr;gap:clamp(32px,5vw,80px);
   margin-bottom:clamp(48px,6vw,80px);align-items:end;
 }
-.test-title{
+.auft-title{
   font-family:var(--ff-display);font-weight:300;
   font-variation-settings:"opsz" 144;
   font-size:clamp(36px,5.5vw,88px);line-height:0.95;letter-spacing:-0.035em;
 }
-.test-title em{font-style:italic;font-family:var(--ff-italic);color:var(--blue);font-weight:300}
-.test-nav{display:flex;gap:8px}
-.test-btn{
-  width:52px;height:52px;border-radius:50%;
-  border:1px solid var(--line);background:transparent;
+.auft-title em{font-style:italic;font-family:var(--ff-italic);color:var(--blue);font-weight:300}
+.auft-intro{
+  font-family:var(--ff-body);font-size:15px;line-height:1.75;
+  color:var(--ink-60);max-width:42ch;
+}
+.auft-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid var(--line);border-left:1px solid var(--line);
+}
+.auft-cell{
+  border-right:1px solid var(--line);border-bottom:1px solid var(--line);
+  aspect-ratio:16/9;
   display:flex;align-items:center;justify-content:center;
-  transition:all 0.3s var(--ease);
-}
-.test-btn:hover{background:var(--ink);border-color:var(--ink)}
-.test-btn:hover svg{stroke:var(--paper)}
-.test-btn svg{width:14px;height:14px;stroke:var(--ink);fill:none;stroke-width:1.5;transition:stroke 0.3s}
-.test-track-wrap{overflow:hidden}
-.test-track{
-  display:flex;gap:clamp(20px,2.5vw,32px);
-  transition:transform 0.8s var(--ease);
-}
-.test-card{
-  flex:0 0 calc(33.333% - clamp(14px,1.7vw,22px));
-  padding:clamp(32px,3.5vw,48px);
+  padding:clamp(24px,3vw,40px);
   background:#fff;
-  border:1px solid var(--line);
-  border-radius:4px;
-  display:flex;flex-direction:column;gap:24px;
-  position:relative;
-  transition:transform 0.5s var(--ease), box-shadow 0.5s;
+  transition:background 0.4s var(--ease);
 }
-.test-card:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(11,11,11,0.08)}
-.test-quote{
-  font-family:var(--ff-display);font-weight:400;
-  font-variation-settings:"opsz" 36;
-  font-size:clamp(16px,1.5vw,20px);line-height:1.5;letter-spacing:-0.01em;
-  color:var(--ink);
-  flex:1;
+.auft-cell:hover{background:var(--paper-2)}
+.auft-cell img{
+  max-width:75%;max-height:60%;width:auto;height:auto;
+  object-fit:contain;
+  filter:grayscale(1) brightness(0.4) contrast(1.2);
+  opacity:0.75;
+  transition:opacity 0.3s, filter 0.3s;
 }
-.test-quote::before{
-  content:'"';font-family:var(--ff-display);font-size:64px;
-  color:var(--blue);line-height:0.6;display:block;margin-bottom:12px;
-  font-feature-settings:"ss01";
+.auft-cell:hover img{opacity:1;filter:grayscale(1) brightness(0) contrast(1.2)}
+.auft-footnote{
+  margin-top:clamp(24px,3vw,40px);
+  font-family:var(--ff-body);font-size:14px;color:var(--ink-60);
+  text-align:center;
 }
-.test-person{
-  display:flex;align-items:center;gap:14px;
-  padding-top:20px;border-top:1px solid var(--line);
+@media(max-width:900px){
+  .auft-head{grid-template-columns:1fr;gap:24px;align-items:start}
+  .auft-grid{grid-template-columns:repeat(2,1fr)}
 }
-.test-avatar{
-  width:46px;height:46px;border-radius:50%;overflow:hidden;
-  background:var(--paper-2);flex-shrink:0;
-  font-family:var(--ff-display);font-weight:400;font-size:18px;
-  display:flex;align-items:center;justify-content:center;
-  color:var(--ink-60);
-}
-.test-avatar img{width:100%;height:100%;object-fit:cover}
-.test-name{font-family:var(--ff-display);font-size:16px;font-weight:500;line-height:1.2}
-.test-role{font-family:var(--ff-mono);font-size:10px;color:var(--ink-60);letter-spacing:0.1em;text-transform:uppercase;margin-top:4px}
-.test-dots{display:flex;gap:8px;margin-top:32px}
-.test-dot{width:8px;height:8px;border-radius:50%;background:var(--line);transition:all 0.3s;cursor:none}
-.test-dot.on{background:var(--ink);width:28px;border-radius:4px}
-@media(max-width:1100px){.test-card{flex:0 0 calc(50% - 12px)}}
-@media(max-width:700px){
-  .test-card{flex:0 0 100%}
-  .test-head{grid-template-columns:1fr;align-items:start}
+@media(max-width:480px){
+  .auft-grid{grid-template-columns:1fr}
 }
 
 /* ==========================================================================
@@ -1076,6 +1287,12 @@ button{font-family:inherit;cursor:none;background:none;border:none;color:inherit
   color:#fff;transition:all 0.3s;align-self:flex-start;
 }
 .jobs-cta:hover{background:#fff;color:var(--ink);border-color:#fff}
+.jobs-contact{
+  margin-top:18px;
+  font-family:var(--ff-body);font-size:13px;line-height:1.7;
+  color:rgba(255,255,255,0.7);
+}
+.jobs-contact strong{color:#fff;font-weight:500}
 
 @media(max-width:900px){
   .jobs-grid{grid-template-columns:1fr;gap:32px}
@@ -1157,6 +1374,32 @@ footer{
 }
 .foot-logo em{font-family:var(--ff-italic);font-style:italic;font-weight:400}
 .foot-tag{font-family:var(--ff-body);font-size:14px;color:rgba(255,255,255,0.55);line-height:1.7;max-width:32ch}
+.foot-legal{
+  font-family:var(--ff-mono);font-size:10px;
+  letter-spacing:0.14em;text-transform:uppercase;
+  color:rgba(255,255,255,0.4);margin-top:6px;
+}
+.cc{
+  position:fixed;bottom:20px;left:20px;right:20px;
+  z-index:9700;max-width:580px;margin:0 auto;
+  background:var(--ink);color:#fff;border-radius:6px;
+  padding:18px 22px;
+  box-shadow:0 24px 60px rgba(0,0,0,0.3);
+  font-family:var(--ff-body);font-size:13px;line-height:1.6;
+  transform:translateY(120%);transition:transform 0.5s var(--ease);
+}
+.cc[data-show="1"]{transform:translateY(0)}
+.cc-inner{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.cc-text{flex:1;min-width:260px;color:rgba(255,255,255,0.85)}
+.cc-text a{color:#fff;border-bottom:1px solid rgba(255,255,255,0.4)}
+.cc-btn{
+  padding:10px 20px;border-radius:100px;
+  background:#fff;color:var(--ink);
+  font-family:var(--ff-mono);font-size:11px;
+  letter-spacing:0.14em;text-transform:uppercase;
+  border:none;cursor:pointer;transition:background 0.3s,color 0.3s;
+}
+.cc-btn:hover{background:var(--blue);color:#fff}
 .foot-socials{display:flex;gap:10px;margin-top:8px}
 .foot-soc{
   width:38px;height:38px;border-radius:50%;border:1px solid rgba(255,255,255,0.15);
@@ -1269,8 +1512,9 @@ footer{
     <li><a href="#leistungen" data-num="01">Leistungen</a></li>
     <li><a href="#prozess" data-num="02">Prozess</a></li>
     <li><a href="#referenzen" data-num="03">Projekte</a></li>
-    <li><a href="#manifest" data-num="04">Haltung</a></li>
-    <li><a href="#jobs" data-num="05">Karriere</a></li>
+    <li><a href="#team" data-num="04">Team</a></li>
+    <li><a href="#manifest" data-num="05">Haltung</a></li>
+    <li><a href="#jobs" data-num="06">Karriere</a></li>
   </ul>
   <div class="nav-right">
     <span class="nav-time" id="navTime">—</span>
@@ -1286,9 +1530,10 @@ footer{
     <li><a href="#leistungen">Leistungen <em>01</em></a></li>
     <li><a href="#prozess">Prozess <em>02</em></a></li>
     <li><a href="#referenzen">Projekte <em>03</em></a></li>
-    <li><a href="#manifest">Haltung <em>04</em></a></li>
-    <li><a href="#jobs">Karriere <em>05</em></a></li>
-    <li><a href="#kontakt">Kontakt <em>06</em></a></li>
+    <li><a href="#team">Team <em>04</em></a></li>
+    <li><a href="#manifest">Haltung <em>05</em></a></li>
+    <li><a href="#jobs">Karriere <em>06</em></a></li>
+    <li><a href="#kontakt">Kontakt <em>07</em></a></li>
   </ul>
   <div class="mmenu-foot">
     <span>Augsburg, DE</span>
@@ -1304,7 +1549,7 @@ footer{
     <div class="hero-top">
       <div class="hero-top-l">
         <span>[ Meixner + Partner ]</span>
-        <span class="hero-coord">Index — 2026 / Ausgabe Eins</span>
+        <span class="hero-coord">Beratende Ingenieure · Seit 1996</span>
       </div>
     </div>
 
@@ -1314,7 +1559,7 @@ footer{
         <span class="l2"><span id="hl2">Sie</span> <span id="hl3"><em>bauen.</em></span><span class="dot"></span></span>
       </h1>
       <div class="hero-bot">
-        <p class="hero-sub" id="hSub">Professionelle Projektsteuerung und Projektentwicklung für komplexe Bauvorhaben im öffentlichen Sektor. Seit 1996 in Augsburg.</p>
+        <p class="hero-sub" id="hSub">Beratende Ingenieure für Projektsteuerung &amp; Projektentwicklung im öffentlichen Hochbau. Seit 1996 in Augsburg — Bayern und Baden-Württemberg.</p>
         <div class="hero-cta-wrap">
           <a href="#leistungen" class="hero-cta">
             <span>Leistungen entdecken</span>
@@ -1353,7 +1598,7 @@ footer{
       <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" fill="#2D5BB5"/></svg>
       VgV-Verfahren
       <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" fill="#2D5BB5"/></svg>
-      Augsburg · München · Bayern
+      Augsburg · Bayern · Baden-Württemberg
       <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" fill="#2D5BB5"/></svg>
     </span>
     <span aria-hidden="true">
@@ -1369,7 +1614,7 @@ footer{
       <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" fill="#2D5BB5"/></svg>
       VgV-Verfahren
       <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" fill="#2D5BB5"/></svg>
-      Augsburg · München · Bayern
+      Augsburg · Bayern · Baden-Württemberg
       <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="3" fill="#2D5BB5"/></svg>
     </span>
   </div>
@@ -1379,36 +1624,51 @@ footer{
 <div class="stats" aria-label="Kennzahlen">
   <div class="stat">
     <span class="stat-label" data-n="01">Jahre Erfahrung</span>
-    <span class="stat-num" data-target="28" data-suffix="+">0</span>
-    <span class="stat-desc">Seit 1996 in Augsburg tätig — über drei Dekaden Projektsteuerung.</span>
+    <span class="stat-num" data-target="30">0</span>
+    <span class="stat-desc">Seit 1996 in Augsburg — drei Dekaden Projektsteuerung im öffentlichen Hochbau.</span>
   </div>
   <div class="stat">
-    <span class="stat-label" data-n="02">Abgeschlossene Projekte</span>
-    <span class="stat-num" data-target="100" data-suffix="+">0</span>
-    <span class="stat-desc">Von Schulen und Museen bis Forschung und Verwaltung.</span>
+    <span class="stat-label" data-n="02">Ausgewählte Referenzen</span>
+    <span class="stat-num" data-target="20" data-suffix="+">0</span>
+    <span class="stat-desc">Über 100 realisierte Vorhaben in Bayern und Baden-Württemberg — eine Auswahl auf dieser Seite.</span>
   </div>
   <div class="stat">
     <span class="stat-label" data-n="03">Projektsektoren</span>
     <span class="stat-num" data-target="6">0</span>
-    <span class="stat-desc">Bildung, Verwaltung, Denkmal, Museen, Forschung, Gesundheit.</span>
+    <span class="stat-desc">Bildung · Verwaltung · Denkmal · Museen · Forschung · Gesundheit.</span>
   </div>
   <div class="stat">
-    <span class="stat-label" data-n="04">Lehraufträge HS Augsburg</span>
-    <span class="stat-num" data-target="2">0</span>
-    <span class="stat-desc">Wissenstransfer an die nächste Generation — seit 2014.</span>
+    <span class="stat-label" data-n="04">Mitarbeiter:innen</span>
+    <span class="stat-num" data-target="50" data-prefix="~">0</span>
+    <span class="stat-desc">Architekt:innen, Ingenieur:innen, kaufmännische Angestellte und Projektassistenz — als Familienunternehmen.</span>
   </div>
 </div>
+
+<!-- TRUST BAR — Mitgliedschaften & Auditierungen -->
+<aside class="trust-bar" aria-label="Mitgliedschaften und Qualifikationen">
+  <div class="trust-inner">
+    <span class="trust-label">Beratende Ingenieure · Mitglied in</span>
+    <ul class="trust-list" role="list">
+      <li><abbr title="Bayerische Ingenieurekammer-Bau">BayIKa-Bau</abbr></li>
+      <li><abbr title="Verband Beratender Ingenieure">VBI</abbr></li>
+      <li><abbr title="Deutscher Verband der Projektmanager in der Bau- und Immobilienwirtschaft">DVP</abbr></li>
+      <li><abbr title="Deutsche Gesellschaft für Nachhaltiges Bauen">DGNB</abbr>-Auditor</li>
+      <li><abbr title="Bewertungssystem Nachhaltiges Bauen (Bund)">BNB</abbr>-Auditor</li>
+      <li>Lehrbeauftragte HS Augsburg</li>
+    </ul>
+  </div>
+</aside>
 
 <!-- MANIFEST -->
 <section id="manifest">
   <div class="manifest-inner">
     <div class="manifest-head">
       <div class="manifest-head-l">
-        <span class="manifest-num">§ 04 — Haltung</span>
-        <h2 class="manifest-title rv">Was uns <em>antreibt.</em></h2>
+        <span class="manifest-num">§ 05 — Haltung</span>
+        <h2 class="manifest-title rv">Unser <em>Verständnis.</em></h2>
       </div>
       <div class="manifest-body" id="mBody">
-        Seit 1996 steuern wir öffentliche Bauprojekte mit <em>Leidenschaft</em> und Präzision. Wir koordinieren alle Projektteilnehmer, sichern Qualität, Termine und Kosten — und schaffen Bauten, die <em>bleiben.</em> Architektur, die Räume für Bildung, Kultur, Verwaltung und Forschung gestaltet. Verantwortung, die Generationen überdauert.
+        Seit 1996 steuern wir öffentliche Bauvorhaben in Bayern und Baden-Württemberg — mit <em>Begeisterung,</em> nach AHO und HOAI, koordiniert über alle Beteiligten hinweg. Qualität, Termine, Kosten. Wir entwickeln, prüfen, vergeben und führen Projekte zum Abschluss. Auch dann, wenn andere es <em>nicht mehr schaffen.</em> Was bleibt, sind Bauten für Bildung, Verwaltung, Kultur, Forschung — und Auftraggeber, die wiederkommen.
       </div>
     </div>
     <div class="manifest-tiles">
@@ -1437,6 +1697,57 @@ footer{
   </div>
 </section>
 
+<!-- TEAM — Gründerteam -->
+<section id="team" aria-label="Gründerteam">
+  <div class="team-inner">
+    <header class="team-head">
+      <span class="eyebrow">§ 04 — Team</span>
+      <h2 class="team-title rv">Das <em>Gründerteam.</em></h2>
+      <p class="team-intro rv rv-d1">Zwei Bauingenieure, zwei Lehrbeauftragte der Hochschule Augsburg, zwei Generationen Erfahrung — und ein gemeinsames Verständnis davon, was öffentlicher Hochbau verlangt.</p>
+    </header>
+
+    <div class="team-grid">
+      <article class="tperson rv">
+        <div class="tperson-photo">
+          <img src="https://www.meixner-partner.de/wp-content/uploads/2020/08/awb_geschaeftsfuehrung_meixner.jpg" alt="Max Meixner" loading="lazy">
+          <span class="tperson-tag">01 — Gründer</span>
+        </div>
+        <div class="tperson-info">
+          <span class="tperson-role">Dipl.-Ing. · Gründer &amp; Geschäftsführer</span>
+          <h3 class="tperson-name">Max <em>Meixner</em></h3>
+          <p class="tperson-bio">Bauingenieur (TU Karlsruhe). Gründete Meixner + Partner 1996 in Augsburg. Über drei Dekaden Erfahrung in der Steuerung anspruchsvoller öffentlicher Bauvorhaben — mit einem besonderen Augenmerk auf Denkmal, kritische Projektsituationen und Nutzungskostenmanagement.</p>
+          <ul class="tperson-creds">
+            <li>Beratender Ingenieur · BayIKa-Bau</li>
+            <li>Lehrbeauftragter · Hochschule Augsburg</li>
+            <li>DVP · Arbeitskreis Nutzungskostenmanagement</li>
+          </ul>
+          <p class="tperson-focus"><span>Fokus</span>Denkmal · Problemprojekte · Nutzungskosten</p>
+        </div>
+      </article>
+
+      <article class="tperson rv rv-d1">
+        <div class="tperson-photo">
+          <img src="https://www.meixner-partner.de/wp-content/uploads/2020/08/awb_geschaeftsfuehrung_rieger.jpg" alt="Robert Rieger" loading="lazy">
+          <span class="tperson-tag">02 — Geschäftsführung</span>
+        </div>
+        <div class="tperson-info">
+          <span class="tperson-role">Dipl.-Ing. (FH) · Geschäftsführer</span>
+          <h3 class="tperson-name">Robert <em>Rieger</em></h3>
+          <p class="tperson-bio">Bauingenieur (FH Augsburg) und Technischer Betriebswirt (IHK). Seit 2007 im Büro, mit einem Vierteljahrhundert Erfahrung im Projektmanagement. Zertifizierter DGNB-Auditor und vertritt das Büro im Verband Beratender Ingenieure.</p>
+          <ul class="tperson-creds">
+            <li>Beratender Ingenieur · BayIKa-Bau · VBI</li>
+            <li>DGNB-Auditor · Nachhaltiges Bauen</li>
+            <li>Lehrbeauftragter · Hochschule Augsburg</li>
+          </ul>
+          <p class="tperson-focus"><span>Fokus</span>Vergaberecht · Machbarkeitsstudien · Nachhaltigkeit</p>
+        </div>
+      </article>
+    </div>
+
+    <p class="team-footnote rv rv-d2">Hinter dem Gründerteam: ein eingespieltes Büro aus rund 50 Architekt:innen, Ingenieur:innen, kaufmännischen Angestellten und Projektassistent:innen — als Familienunternehmen geführt, mit flachen Hierarchien.</p>
+  </div>
+</section>
+
 <!-- LEISTUNGEN -->
 <section id="leistungen">
   <div class="leist-head">
@@ -1445,18 +1756,19 @@ footer{
       <h2 class="leist-head-title rv" style="margin-top:14px">Was wir <em>tun.</em></h2>
     </div>
     <div></div>
-    <p class="leist-head-desc rv rv-d1">Von der ersten Machbarkeitsstudie bis zur Schlüsselübergabe — sechs Kernleistungen, die zusammen ein vollständiges Projektmanagement bilden.</p>
+    <p class="leist-head-desc rv rv-d1">Neun Kernleistungen — von der Bedarfsplanung bis zur Zertifizierung. Gemeinsam decken sie das vollständige Projektmanagement nach AHO und HOAI im öffentlichen Hochbau ab.</p>
   </div>
 
   <div class="leist-list">
+
     <div class="leist-item" data-preview="https://www.meixner-partner.de/wp-content/uploads/2020/07/awb_bildung_neu.jpg">
       <div class="leist-head-row">
-        <span class="leist-num">01 / 06</span>
+        <span class="leist-num">01 / 09</span>
         <h3 class="leist-name">Projekt<em>steuerung</em></h3>
         <div class="leist-tags">
+          <span class="leist-tag">Kernkompetenz</span>
           <span class="leist-tag">AHO</span>
           <span class="leist-tag">HOAI</span>
-          <span class="leist-tag">Kosten</span>
         </div>
         <div class="leist-ico"></div>
       </div>
@@ -1464,26 +1776,26 @@ footer{
         <div class="leist-body-inner">
           <span class="leist-num" style="align-self:flex-start">↳</span>
           <div class="leist-body-desc">
-            <p>Wir übernehmen delegierbare Bauherrenaufgaben in allen HOAI-Leistungsphasen. Unsere Aufgabe: Qualität, Termine und Kosten im Einklang halten — gerade dort, wo öffentliche Mittel, enge Fristen und viele Beteiligte aufeinandertreffen.</p>
-            <p>Koordination erfolgt nach AHO-Standard, transparent dokumentiert und immer mit Blick auf das Ergebnis: ein Bauwerk, das hält, was versprochen wurde.</p>
+            <p>Unsere Kernkompetenz. Als Projektsteuerer koordinieren wir alle Projektteilnehmer und bilden die agile Schnittstelle zum Bauherrn. Qualitäten, Termine und Kosten haben wir kontinuierlich im Blick.</p>
+            <p>Für den öffentlichen Sektor übernehmen wir auch die Erstellung von Förderanträgen und Verwendungsnachweisen — damit Auftraggeber das Beste für ihre Mittel herausholen.</p>
           </div>
           <ul class="leist-body-list">
-            <li>Kostensteuerung &amp; Budgetkontrolle</li>
-            <li>Terminplanung &amp; Risikomanagement</li>
-            <li>Vergabesteuerung nach VgV / VOB</li>
-            <li>Qualitätsmanagement &amp; Abnahmen</li>
+            <li>Kosten-, Termin- &amp; Qualitätssteuerung</li>
+            <li>Entscheidungsvorlagen für den Bauherrn</li>
+            <li>Förderanträge &amp; Verwendungsnachweise</li>
+            <li>Risikomanagement nach AHO</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <div class="leist-item" data-preview="https://images.unsplash.com/photo-1448630360428-65456885c650?w=900&q=80">
+    <div class="leist-item">
       <div class="leist-head-row">
-        <span class="leist-num">02 / 06</span>
+        <span class="leist-num">02 / 09</span>
         <h3 class="leist-name">Projekt<em>leitung</em></h3>
         <div class="leist-tags">
           <span class="leist-tag">Bauherrenvertretung</span>
-          <span class="leist-tag">HOAI</span>
+          <span class="leist-tag">Operativ</span>
         </div>
         <div class="leist-ico"></div>
       </div>
@@ -1491,25 +1803,26 @@ footer{
         <div class="leist-body-inner">
           <span class="leist-num" style="align-self:flex-start">↳</span>
           <div class="leist-body-desc">
-            <p>Als verlängerter Arm des Bauherrn übernehmen wir nicht-delegierbare Aufgaben dort, wo strategische Entscheidungen fallen. Wir führen, entscheiden und verantworten — immer im Auftrag und Sinne unserer Auftraggeber.</p>
+            <p>In der Projektleitung übernehmen wir eine zentrale operative Rolle. Wir planen, steuern und überwachen über die gesamte Projektdauer hinweg alle relevanten Teilbereiche.</p>
+            <p>In Krisensituationen handeln wir schnell und entschlossen im Sinne des Bauherrn. Die Erfahrung aus drei Dekaden hilft uns, auch komplexe Vorhaben professionell und störungsarm umzusetzen.</p>
           </div>
           <ul class="leist-body-list">
-            <li>Strategische Projektführung</li>
-            <li>Stakeholder-Management</li>
-            <li>Politische &amp; Gremienarbeit</li>
+            <li>Operative Projektführung</li>
+            <li>Stakeholder- &amp; Krisenmanagement</li>
             <li>Verhandlung &amp; Entscheidung</li>
+            <li>Vertretung gegenüber Gremien</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <div class="leist-item" data-preview="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=900&q=80">
+    <div class="leist-item">
       <div class="leist-head-row">
-        <span class="leist-num">03 / 06</span>
+        <span class="leist-num">03 / 09</span>
         <h3 class="leist-name">Projekt<em>entwicklung</em></h3>
         <div class="leist-tags">
-          <span class="leist-tag">Machbarkeit</span>
           <span class="leist-tag">Bedarfsplanung</span>
+          <span class="leist-tag">Varianten</span>
         </div>
         <div class="leist-ico"></div>
       </div>
@@ -1517,25 +1830,26 @@ footer{
         <div class="leist-body-inner">
           <span class="leist-num" style="align-self:flex-start">↳</span>
           <div class="leist-body-desc">
-            <p>Bevor der erste Stein gesetzt wird, muss das Projekt verstanden sein. Wir entwickeln aus Raumbedarfen belastbare Konzepte — mit Blick auf Standort, Budget, Nutzung und Nachhaltigkeit.</p>
+            <p>Damit ein Projekt gelingt, braucht es eine fundierte Bedarfsplanung. Wir untersuchen zu Beginn alle für den Projekterfolg entscheidenden Aspekte, stellen Varianten gegenüber, entwickeln Förderstrategien und erarbeiten Machbarkeitsstudien.</p>
+            <p>Das Ziel: die Anforderungen von Bauherrn und Nutzern optimal umsetzen — bevor die eigentliche Planung beginnt.</p>
           </div>
           <ul class="leist-body-list">
             <li>Bedarfsanalyse &amp; Raumprogramm</li>
-            <li>Standortbewertung</li>
             <li>Variantenuntersuchung</li>
-            <li>Wirtschaftlichkeitsprüfung</li>
+            <li>Förderstrategien</li>
+            <li>Wirtschaftlichkeitsbetrachtung</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <div class="leist-item" data-preview="https://images.unsplash.com/photo-1464146072230-91cabc968266?w=900&q=80">
+    <div class="leist-item">
       <div class="leist-head-row">
-        <span class="leist-num">04 / 06</span>
-        <h3 class="leist-name">Machbarkeits<em>studien</em></h3>
+        <span class="leist-num">04 / 09</span>
+        <h3 class="leist-name">Übernahme von <em>Projekten</em></h3>
         <div class="leist-tags">
-          <span class="leist-tag">Konzept</span>
-          <span class="leist-tag">Analyse</span>
+          <span class="leist-tag">Rettung</span>
+          <span class="leist-tag">Spezialfall</span>
         </div>
         <div class="leist-ico"></div>
       </div>
@@ -1543,25 +1857,53 @@ footer{
         <div class="leist-body-inner">
           <span class="leist-num" style="align-self:flex-start">↳</span>
           <div class="leist-body-desc">
-            <p>Fundierte Studien zur Realisierbarkeit komplexer Vorhaben — technisch, wirtschaftlich, rechtlich. Die Basis für Investitionsentscheidungen, die Bestand haben.</p>
+            <p>Bei großen Vorhaben kommt es immer wieder zu Störungen und Auseinandersetzungen. Muss ein wesentlicher Projektbeteiligter ausgetauscht werden, ist das für alle eine Herausforderung — oft aber der einzige Weg, das Projekt zu retten.</p>
+            <p>Wir sagen: nicht problemlos, aber machbar. Mit Erfahrung und Engagement arbeiten wir an einem geordneten, erfolgreichen Projektabschluss.</p>
           </div>
           <ul class="leist-body-list">
-            <li>Technische Machbarkeit</li>
-            <li>Wirtschaftlichkeitsanalyse</li>
+            <li>Übernahme laufender Vorhaben</li>
+            <li>Status- &amp; Risikoanalyse</li>
+            <li>Re-Strukturierung der Beteiligten</li>
+            <li>Geordneter Projektabschluss</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="leist-item">
+      <div class="leist-head-row">
+        <span class="leist-num">05 / 09</span>
+        <h3 class="leist-name">Machbarkeits<em>studien</em></h3>
+        <div class="leist-tags">
+          <span class="leist-tag">Analyse</span>
+          <span class="leist-tag">Varianten</span>
+        </div>
+        <div class="leist-ico"></div>
+      </div>
+      <div class="leist-body">
+        <div class="leist-body-inner">
+          <span class="leist-num" style="align-self:flex-start">↳</span>
+          <div class="leist-body-desc">
+            <p>Für geplante Bauprojekte ermitteln wir, in welcher Art, in welchem Umfang, mit welchen Mitteln und in welcher Zeit ein Vorhaben realisiert werden kann. Mehrere Varianten — Risiken und Lösungen abgewogen.</p>
+            <p>So sichern wir den Projekterfolg von Anfang an.</p>
+          </div>
+          <ul class="leist-body-list">
+            <li>Technische &amp; wirtschaftliche Machbarkeit</li>
             <li>Genehmigungsfähigkeit</li>
+            <li>Variantenvergleich</li>
             <li>Risikobewertung</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <div class="leist-item" data-preview="https://images.unsplash.com/photo-1577495508048-b635879837f1?w=900&q=80">
+    <div class="leist-item">
       <div class="leist-head-row">
-        <span class="leist-num">05 / 06</span>
+        <span class="leist-num">06 / 09</span>
         <h3 class="leist-name">VgV-<em>Verfahren</em></h3>
         <div class="leist-tags">
           <span class="leist-tag">Vergabe</span>
-          <span class="leist-tag">Öffentlich</span>
+          <span class="leist-tag">EU-Schwelle</span>
         </div>
         <div class="leist-ico"></div>
       </div>
@@ -1569,25 +1911,25 @@ footer{
         <div class="leist-body-inner">
           <span class="leist-num" style="align-self:flex-start">↳</span>
           <div class="leist-body-desc">
-            <p>Begleitung öffentlicher Vergabeverfahren nach VgV — rechtssicher, transparent und mit dem Ziel, den besten Planer für das Projekt zu finden.</p>
+            <p>Wir führen öffentliche Auftraggeber strukturiert durch VgV-Vergabeverfahren — oberhalb und unterhalb der EU-Schwellenwerte. Unser Spezialteam steuert die Prozesse termingerecht und rechtssicher.</p>
           </div>
           <ul class="leist-body-list">
-            <li>Vergabevorbereitung</li>
+            <li>Vergabevorbereitung &amp; -konzeption</li>
             <li>EU-weite Bekanntmachung</li>
-            <li>Teilnehmer- &amp; Angebotsprüfung</li>
+            <li>Teilnahmewettbewerb &amp; Angebotsprüfung</li>
             <li>Verhandlung &amp; Zuschlag</li>
           </ul>
         </div>
       </div>
     </div>
 
-    <div class="leist-item" data-preview="https://images.unsplash.com/photo-1518005068251-37900150dfca?w=900&q=80">
+    <div class="leist-item">
       <div class="leist-head-row">
-        <span class="leist-num">06 / 06</span>
-        <h3 class="leist-name">DGNB-<em>Zertifizierung</em></h3>
+        <span class="leist-num">07 / 09</span>
+        <h3 class="leist-name">Architekten<em>wettbewerbe</em></h3>
         <div class="leist-tags">
-          <span class="leist-tag">Nachhaltigkeit</span>
-          <span class="leist-tag">ESG</span>
+          <span class="leist-tag">Wettbewerb</span>
+          <span class="leist-tag">Auslobung</span>
         </div>
         <div class="leist-ico"></div>
       </div>
@@ -1595,17 +1937,73 @@ footer{
         <div class="leist-body-inner">
           <span class="leist-num" style="align-self:flex-start">↳</span>
           <div class="leist-body-desc">
-            <p>Nachhaltige Gebäude entstehen nicht zufällig. Wir begleiten DGNB-Zertifizierungen von der Zielvereinbarung bis zum Gold- oder Platin-Audit — als zertifizierte DGNB-Auditoren.</p>
+            <p>Hat sich ein Auftraggeber für einen Architektenwettbewerb entschieden, begleiten wir Schritt für Schritt: bei der Formulierung der Aufgabenstellung, der objektiven Bewertung der Arbeiten und der rechtssicheren Abwicklung.</p>
+            <p>Gemeinsam mit Bauherrn und Nutzern entwickeln wir im Wettbewerb die besten Ideen für das Vorhaben.</p>
           </div>
           <ul class="leist-body-list">
-            <li>DGNB-Auditierung</li>
-            <li>ESG-Reporting</li>
-            <li>Lebenszykluskosten</li>
-            <li>Klimabilanzierung</li>
+            <li>Auslobung &amp; Verfahrensbetreuung</li>
+            <li>Vorprüfung &amp; Preisgericht</li>
+            <li>Dokumentation</li>
+            <li>RPW-konforme Abwicklung</li>
           </ul>
         </div>
       </div>
     </div>
+
+    <div class="leist-item">
+      <div class="leist-head-row">
+        <span class="leist-num">08 / 09</span>
+        <h3 class="leist-name">Nachhaltigkeits<em>beratung</em></h3>
+        <div class="leist-tags">
+          <span class="leist-tag">Bestand</span>
+          <span class="leist-tag">Neubau</span>
+        </div>
+        <div class="leist-ico"></div>
+      </div>
+      <div class="leist-body">
+        <div class="leist-body-inner">
+          <span class="leist-num" style="align-self:flex-start">↳</span>
+          <div class="leist-body-desc">
+            <p>Für Bestandsgebäude und Neubauten bieten wir umfangreiche Nachhaltigkeitsberatungen — mit Schwerpunkten, die Bauherr und Nutzer gemeinsam wählen.</p>
+            <p>Wir zeigen, wie gezielte Maßnahmen Energieverbrauch und CO₂-Ausstoß senken — und gleichzeitig die Herstellkosten reduzieren können.</p>
+          </div>
+          <ul class="leist-body-list">
+            <li>Energetische Konzeption</li>
+            <li>CO₂- &amp; Lebenszyklusbetrachtung</li>
+            <li>Sanierungsstrategie</li>
+            <li>Förderfähigkeit</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="leist-item">
+      <div class="leist-head-row">
+        <span class="leist-num">09 / 09</span>
+        <h3 class="leist-name">DGNB / BNB-<em>Zertifizierung</em></h3>
+        <div class="leist-tags">
+          <span class="leist-tag">DGNB-Auditor</span>
+          <span class="leist-tag">BNB-Auditor</span>
+        </div>
+        <div class="leist-ico"></div>
+      </div>
+      <div class="leist-body">
+        <div class="leist-body-inner">
+          <span class="leist-num" style="align-self:flex-start">↳</span>
+          <div class="leist-body-desc">
+            <p>Im Büro haben wir sowohl einen DGNB-Auditor als auch einen BNB-Auditor — und können Auftraggeber damit über beide Systeme zur Zertifizierung führen. BNB ist für Bundesbauten relevant, DGNB für nahezu alle weiteren Bauherrengruppen.</p>
+            <p>Anhand der vorgegebenen Nachhaltigkeitskriterien analysieren wir die Immobilie und führen sie gemeinsam zum Zertifikat.</p>
+          </div>
+          <ul class="leist-body-list">
+            <li>DGNB-Auditierung (Gold / Platin)</li>
+            <li>BNB-Auditierung (Bundesbauten)</li>
+            <li>Kriterienanalyse &amp; Nachweise</li>
+            <li>Lebenszyklusbetrachtung</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
   </div>
 
   <!-- Floating preview canvas (Three.js WebGL displacement) -->
@@ -1688,49 +2086,49 @@ footer{
     <div class="ref-head-meta">
       <span>§ 03 — Projekte</span>
       <span class="ref-head-count">12<em>/100+</em></span>
-      <span>Auswahl · 2014–2025</span>
+      <span>Auswahl realisierter Vorhaben</span>
     </div>
   </div>
   <div class="ref-pin" id="refPin">
     <div class="ref-ghost" aria-hidden="true">Referenzen</div>
     <div class="ref-track" id="refTrack">
-      <!-- project cards -->
+
       <article class="ref-card" data-cursor="view">
         <div class="ref-card-img">
           <span class="ref-card-num">01</span>
           <span class="ref-card-cat">Bildung</span>
-          <span class="ref-card-year">2024</span>
           <img src="https://www.meixner-partner.de/wp-content/uploads/2020/07/awb_bildung_neu.jpg" alt="Schulzentrum Odelzhausen" loading="lazy">
         </div>
         <div class="ref-card-info">
           <h3 class="ref-card-title">Schulzentrum Odelzhausen</h3>
-          <p class="ref-card-sub"><span>Neubau</span><span>Odelzhausen</span><span>€ 28 Mio.</span></p>
+          <p class="ref-card-sub"><span>Neubau · Schulzentrum</span><span>Odelzhausen</span></p>
+          <p class="ref-card-client">Zweckverband Grund- und Mittelschule Odelzhausen</p>
         </div>
       </article>
 
       <article class="ref-card" data-cursor="view">
         <div class="ref-card-img">
           <span class="ref-card-num">02</span>
-          <span class="ref-card-cat">Denkmal</span>
-          <span class="ref-card-year">2023</span>
-          <img src="https://images.unsplash.com/photo-1605647540924-852290f6b0d5?w=900&q=80" alt="Denkmalpflegeprojekt" loading="lazy">
+          <span class="ref-card-cat">Bildung</span>
+          <img src="https://images.unsplash.com/photo-1592280771190-3e2e4d571952?w=900&q=80" alt="Schulen Orleansstraße" loading="lazy">
         </div>
         <div class="ref-card-info">
-          <h3 class="ref-card-title">Sanierung Staatsarchiv</h3>
-          <p class="ref-card-sub"><span>Denkmal</span><span>Augsburg</span><span>€ 14 Mio.</span></p>
+          <h3 class="ref-card-title">Schulen Orleansstraße</h3>
+          <p class="ref-card-sub"><span>Schulbau</span><span>München</span></p>
+          <p class="ref-card-client">Landeshauptstadt München</p>
         </div>
       </article>
 
       <article class="ref-card" data-cursor="view">
         <div class="ref-card-img">
           <span class="ref-card-num">03</span>
-          <span class="ref-card-cat">Museum</span>
-          <span class="ref-card-year">2022</span>
-          <img src="https://images.unsplash.com/photo-1565372195458-9de0b320ef04?w=900&q=80" alt="Museumsneubau" loading="lazy">
+          <span class="ref-card-cat">Verwaltung</span>
+          <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=900&q=80" alt="Akademie und Servicezentrum HWK" loading="lazy">
         </div>
         <div class="ref-card-info">
-          <h3 class="ref-card-title">Museum der Moderne</h3>
-          <p class="ref-card-sub"><span>Neubau</span><span>München</span><span>€ 42 Mio.</span></p>
+          <h3 class="ref-card-title">Akademie + Servicezentrum</h3>
+          <p class="ref-card-sub"><span>Neubau · Verwaltung</span><span>Augsburg</span></p>
+          <p class="ref-card-client">Handwerkskammer für Schwaben</p>
         </div>
       </article>
 
@@ -1738,66 +2136,119 @@ footer{
         <div class="ref-card-img">
           <span class="ref-card-num">04</span>
           <span class="ref-card-cat">Verwaltung</span>
-          <span class="ref-card-year">2022</span>
-          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&q=80" alt="Rathauserweiterung" loading="lazy">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=900&q=80" alt="Finanz- und Gesundheitszentrum Friedberg" loading="lazy">
         </div>
         <div class="ref-card-info">
-          <h3 class="ref-card-title">Rathauserweiterung Friedberg</h3>
-          <p class="ref-card-sub"><span>Erweiterung</span><span>Friedberg</span><span>€ 19 Mio.</span></p>
+          <h3 class="ref-card-title">Finanz- und Gesundheitszentrum</h3>
+          <p class="ref-card-sub"><span>Neubau · Mischnutzung</span><span>Friedberg</span></p>
+          <p class="ref-card-client">Stadt Friedberg</p>
         </div>
       </article>
 
       <article class="ref-card" data-cursor="view">
         <div class="ref-card-img">
           <span class="ref-card-num">05</span>
-          <span class="ref-card-cat">Forschung</span>
-          <span class="ref-card-year">2021</span>
-          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&q=80" alt="Forschungslabor" loading="lazy">
+          <span class="ref-card-cat">Denkmal</span>
+          <img src="https://images.unsplash.com/photo-1605647540924-852290f6b0d5?w=900&q=80" alt="Kloster Roggenburg" loading="lazy">
         </div>
         <div class="ref-card-info">
-          <h3 class="ref-card-title">Forschungszentrum Medizin</h3>
-          <p class="ref-card-sub"><span>Neubau</span><span>Augsburg</span><span>€ 67 Mio.</span></p>
+          <h3 class="ref-card-title">Kloster Roggenburg</h3>
+          <p class="ref-card-sub"><span>Sanierung · Neubau</span><span>Roggenburg</span></p>
+          <p class="ref-card-client">Prämonstratenser Kloster Roggenburg</p>
         </div>
       </article>
 
       <article class="ref-card" data-cursor="view">
         <div class="ref-card-img">
           <span class="ref-card-num">06</span>
-          <span class="ref-card-cat">Gesundheit</span>
-          <span class="ref-card-year">2021</span>
-          <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=900&q=80" alt="Klinikneubau" loading="lazy">
+          <span class="ref-card-cat">Denkmal · Museum</span>
+          <img src="https://images.unsplash.com/photo-1565372195458-9de0b320ef04?w=900&q=80" alt="Museum für Konkrete Kunst und Design" loading="lazy">
         </div>
         <div class="ref-card-info">
-          <h3 class="ref-card-title">Klinik St. Elisabeth</h3>
-          <p class="ref-card-sub"><span>Sanierung</span><span>Landsberg</span><span>€ 31 Mio.</span></p>
+          <h3 class="ref-card-title">Museum für Konkrete Kunst &amp; Design</h3>
+          <p class="ref-card-sub"><span>Sanierung · Umnutzung</span><span>Ingolstadt</span></p>
+          <p class="ref-card-client">Stadt Ingolstadt</p>
         </div>
       </article>
 
       <article class="ref-card" data-cursor="view">
         <div class="ref-card-img">
           <span class="ref-card-num">07</span>
-          <span class="ref-card-cat">Bildung</span>
-          <span class="ref-card-year">2020</span>
-          <img src="https://images.unsplash.com/photo-1592280771190-3e2e4d571952?w=900&q=80" alt="Grundschule" loading="lazy">
+          <span class="ref-card-cat">Museum</span>
+          <img src="https://images.unsplash.com/photo-1518005020951-eccb494ad742?w=900&q=80" alt="Diether-Kunerth-Museum Ottobeuren" loading="lazy">
         </div>
         <div class="ref-card-info">
-          <h3 class="ref-card-title">Grundschule Aichach</h3>
-          <p class="ref-card-sub"><span>Neubau</span><span>Aichach</span><span>€ 12 Mio.</span></p>
+          <h3 class="ref-card-title">Diether-Kunerth-Museum</h3>
+          <p class="ref-card-sub"><span>Museumsneubau</span><span>Ottobeuren</span></p>
+          <p class="ref-card-client">Markt Ottobeuren</p>
         </div>
       </article>
 
       <article class="ref-card" data-cursor="view">
         <div class="ref-card-img">
           <span class="ref-card-num">08</span>
-          <span class="ref-card-cat">Kultur</span>
-          <span class="ref-card-year">2019</span>
-          <img src="https://images.unsplash.com/photo-1526041092449-209d556f7a32?w=900&q=80" alt="Kulturzentrum" loading="lazy">
+          <span class="ref-card-cat">Museum</span>
+          <img src="https://images.unsplash.com/photo-1526041092449-209d556f7a32?w=900&q=80" alt="Museumsdepot der Landeshauptstadt München" loading="lazy">
         </div>
         <div class="ref-card-info">
-          <h3 class="ref-card-title">Kulturzentrum Schwaben</h3>
-          <p class="ref-card-sub"><span>Neubau</span><span>Günzburg</span><span>€ 22 Mio.</span></p>
+          <h3 class="ref-card-title">Museumsdepot</h3>
+          <p class="ref-card-sub"><span>Spezialbau</span><span>München</span></p>
+          <p class="ref-card-client">Landeshauptstadt München</p>
         </div>
       </article>
+
+      <article class="ref-card" data-cursor="view">
+        <div class="ref-card-img">
+          <span class="ref-card-num">09</span>
+          <span class="ref-card-cat">Gesundheit</span>
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=900&q=80" alt="Zentrum für Innere Medizin Würzburg" loading="lazy">
+        </div>
+        <div class="ref-card-info">
+          <h3 class="ref-card-title">Zentrum für Innere Medizin</h3>
+          <p class="ref-card-sub"><span>Klinikneubau</span><span>Würzburg</span></p>
+          <p class="ref-card-client">Universitätsklinikum Würzburg</p>
+        </div>
+      </article>
+
+      <article class="ref-card" data-cursor="view">
+        <div class="ref-card-img">
+          <span class="ref-card-num">10</span>
+          <span class="ref-card-cat">Gesundheit</span>
+          <img src="https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=900&q=80" alt="Klinikum Aschaffenburg" loading="lazy">
+        </div>
+        <div class="ref-card-info">
+          <h3 class="ref-card-title">Klinikum Aschaffenburg</h3>
+          <p class="ref-card-sub"><span>Klinik · Sanierung</span><span>Aschaffenburg</span></p>
+          <p class="ref-card-client">Klinikum Aschaffenburg-Alzenau</p>
+        </div>
+      </article>
+
+      <article class="ref-card" data-cursor="view">
+        <div class="ref-card-img">
+          <span class="ref-card-num">11</span>
+          <span class="ref-card-cat">Forschung</span>
+          <img src="https://images.unsplash.com/photo-1518005068251-37900150dfca?w=900&q=80" alt="SG 900 DLR Augsburg" loading="lazy">
+        </div>
+        <div class="ref-card-info">
+          <h3 class="ref-card-title">SG 900 — DLR Augsburg</h3>
+          <p class="ref-card-sub"><span>Forschungsbau</span><span>Augsburg</span></p>
+          <p class="ref-card-client">Deutsches Zentrum für Luft- und Raumfahrt</p>
+        </div>
+      </article>
+
+      <article class="ref-card" data-cursor="view">
+        <div class="ref-card-img">
+          <span class="ref-card-num">12</span>
+          <span class="ref-card-cat">Forschung</span>
+          <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?w=900&q=80" alt="Gebäude E6 Universität Würzburg" loading="lazy">
+        </div>
+        <div class="ref-card-info">
+          <h3 class="ref-card-title">Gebäude E6</h3>
+          <p class="ref-card-sub"><span>Forschungsneubau</span><span>Würzburg</span></p>
+          <p class="ref-card-client">Julius-Maximilians-Universität Würzburg</p>
+        </div>
+      </article>
+
     </div>
   </div>
   <div class="ref-foot">
@@ -1805,76 +2256,62 @@ footer{
     <div class="ref-foot-line" style="--ref-p:0%"></div>
     <span>Alle Projekte ansehen →</span>
   </div>
+
+  <!-- Weitere Vorhaben — kompakte Liste, kein Card-Layout -->
+  <div class="ref-listing">
+    <div class="ref-listing-inner">
+      <span class="eyebrow eyebrow--light">Weitere Vorhaben</span>
+      <ul class="ref-listing-grid">
+        <li><strong>Schulen Bernaysstraße</strong> · Landeshauptstadt München · <span>Bildung</span></li>
+        <li><strong>BTZ Augsburg</strong> · Handwerkskammer für Schwaben · <span>Bildung</span></li>
+        <li><strong>Fleischerschule Augsburg</strong> · Fleischerverband Augsburg · <span>Bildung</span></li>
+        <li><strong>Schulzentrum Ottobeuren</strong> · Markt Ottobeuren · <span>Bildung</span></li>
+        <li><strong>Verwaltungsgebäude PTG</strong> · Privat · <span>Verwaltung</span></li>
+        <li><strong>Fohlenhof Steingaden</strong> · Markt Steingaden · <span>Denkmal</span></li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials">
-  <div class="test-inner">
-    <div class="test-head">
+<!-- AUFTRAGGEBER — LOGO WALL -->
+<section id="auftraggeber" aria-label="Auftraggeber">
+  <div class="auft-inner">
+    <header class="auft-head">
       <div>
-        <span class="eyebrow">§ 05 — Stimmen</span>
-        <h2 class="test-title rv" style="margin-top:14px">Was Partner <em>sagen.</em></h2>
+        <span class="eyebrow">§ 06 — Auftraggeber</span>
+        <h2 class="auft-title rv">Im Auftrag von <em>öffentlicher Hand</em><br>und Institutionen.</h2>
       </div>
-      <div class="test-nav">
-        <button class="test-btn" id="tPrev" aria-label="Zurück"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
-        <button class="test-btn" id="tNext" aria-label="Weiter"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+      <p class="auft-intro rv rv-d1">Städte, Kommunen, Landkreise, Hochschulen, Forschungseinrichtungen, kirchliche Träger und Denkmalbehörden. Unsere Projekte entstehen für Auftraggeber, die in Generationen denken.</p>
+    </header>
+
+    <div class="auft-grid">
+      <div class="auft-cell">
+        <img src="logos/lhm.png" alt="Landeshauptstadt München" loading="lazy">
       </div>
-    </div>
-    <div class="test-track-wrap">
-      <div class="test-track" id="tTrack">
-        <div class="test-card">
-          <p class="test-quote">Meixner + Partner begleiten uns durch ein technisch hochkomplexes Vorhaben. Die Kommunikation ist klar, die Terminplanung belastbar und das Kostencontrolling präzise.</p>
-          <div class="test-person">
-            <div class="test-avatar">A</div>
-            <div>
-              <p class="test-name">Dr. Andrea Schmidt</p>
-              <p class="test-role">Bauherrenvertretung · Stadt Augsburg</p>
-            </div>
-          </div>
-        </div>
-        <div class="test-card">
-          <p class="test-quote">Seit über einer Dekade arbeiten wir zusammen. Was uns überzeugt: Sie denken in Dekaden, nicht in Quartalen. Genau das brauchen öffentliche Bauvorhaben.</p>
-          <div class="test-person">
-            <div class="test-avatar">M</div>
-            <div>
-              <p class="test-name">Martin Huber</p>
-              <p class="test-role">Hochbauamt · Landratsamt Aichach-Friedberg</p>
-            </div>
-          </div>
-        </div>
-        <div class="test-card">
-          <p class="test-quote">Ein Team, das auch bei 30 parallelen Gewerken nicht den Überblick verliert. Die Kostentreue über die gesamte Projektdauer war beispielhaft.</p>
-          <div class="test-person">
-            <div class="test-avatar">K</div>
-            <div>
-              <p class="test-name">Prof. Dr. Klaus Weber</p>
-              <p class="test-role">Leitung Bauamt · HS Augsburg</p>
-            </div>
-          </div>
-        </div>
-        <div class="test-card">
-          <p class="test-quote">Die VgV-Begleitung durch Meixner + Partner war juristisch einwandfrei und hat uns ermöglicht, den besten Planer für das Projekt zu finden.</p>
-          <div class="test-person">
-            <div class="test-avatar">S</div>
-            <div>
-              <p class="test-name">Stefanie Vogel</p>
-              <p class="test-role">Kämmerin · Gemeinde Odelzhausen</p>
-            </div>
-          </div>
-        </div>
-        <div class="test-card">
-          <p class="test-quote">Ein verlässlicher Partner für die Denkmalsanierung. Respekt vor dem Bestand, Klarheit in der Kommunikation, Präzision bei der Umsetzung.</p>
-          <div class="test-person">
-            <div class="test-avatar">T</div>
-            <div>
-              <p class="test-name">Thomas Bachmann</p>
-              <p class="test-role">Denkmalpflege · Bayern</p>
-            </div>
-          </div>
-        </div>
+      <div class="auft-cell">
+        <img src="logos/stadt-ingolstadt.png" alt="Stadt Ingolstadt" loading="lazy">
+      </div>
+      <div class="auft-cell">
+        <img src="logos/hwk-schwaben.png" alt="Handwerkskammer für Schwaben" loading="lazy">
+      </div>
+      <div class="auft-cell">
+        <img src="logos/dlr.svg" alt="Deutsches Zentrum für Luft- und Raumfahrt" loading="lazy">
+      </div>
+      <div class="auft-cell">
+        <img src="logos/uni-wuerzburg.png" alt="Julius-Maximilians-Universität Würzburg" loading="lazy">
+      </div>
+      <div class="auft-cell">
+        <img src="logos/klinikum-aschaffenburg.png" alt="Klinikum Aschaffenburg-Alzenau" loading="lazy">
+      </div>
+      <div class="auft-cell">
+        <img src="logos/blfd.svg" alt="Bayerisches Landesamt für Denkmalpflege" loading="lazy">
+      </div>
+      <div class="auft-cell">
+        <img src="logos/stadt-augsburg.png" alt="Stadt Augsburg" loading="lazy">
       </div>
     </div>
-    <div class="test-dots" id="tDots"></div>
+
+    <p class="auft-footnote rv">Eine Auswahl. Vollständige Referenzlisten auf Anfrage — <a href="#kontakt" class="linehover">Kontakt aufnehmen</a>.</p>
   </div>
 </section>
 
@@ -1883,58 +2320,45 @@ footer{
   <div class="jobs-inner">
     <div class="jobs-grid">
       <div class="jobs-l">
-        <span class="jobs-eyebrow">§ 06 — Karriere</span>
+        <span class="jobs-eyebrow">§ 07 — Karriere</span>
         <h2 class="jobs-title rv">Werde Teil von<br><em>etwas, das bleibt.</em></h2>
         <p class="jobs-desc rv rv-d1">Wir suchen Menschen, die Verantwortung übernehmen. Die in Dekaden denken. Die öffentliche Bauten als das verstehen, was sie sind: Räume, die Generationen prägen.</p>
-        <a href="#kontakt" class="jobs-cta">
+        <a href="mailto:bewerbung@meixner-partner.de" class="jobs-cta">
           <span>Initiativbewerbung</span>
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
         </a>
+        <p class="jobs-contact">
+          Rückfragen direkt an <strong>Antonija Gracic</strong> · <a href="tel:+4982150105170" class="linehover">+49 821 / 50 10 5-170</a> · <a href="mailto:bewerbung@meixner-partner.de" class="linehover">bewerbung@meixner-partner.de</a>
+        </p>
       </div>
       <div class="jobs-list">
-        <a href="#" class="job">
+        <a href="mailto:bewerbung@meixner-partner.de?subject=Bewerbung%20Projektsteuerung%20(m%2Fw%2Fd)" class="job">
           <span class="job-num">01</span>
           <div class="job-info">
-            <h3 class="job-title">Projektsteuerer (m/w/d)</h3>
-            <p class="job-meta"><span>Augsburg</span><span>Vollzeit</span><span>Senior</span></p>
+            <h3 class="job-title">Architekt / Bauingenieur (m/w/d)</h3>
+            <p class="job-meta"><span>Projektsteuerung im Hochbau</span><span>Augsburg</span><span>Vollzeit</span><span>Senior</span></p>
+          </div>
+          <span class="job-badge">5+ Jahre Erfahrung</span>
+          <span class="job-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
+        </a>
+
+        <a href="mailto:bewerbung@meixner-partner.de?subject=Bewerbung%20Projektmanager%20(m%2Fw%2Fd)" class="job">
+          <span class="job-num">02</span>
+          <div class="job-info">
+            <h3 class="job-title">Projektmanager (m/w/d)</h3>
+            <p class="job-meta"><span>Projektsteuerung &amp; -entwicklung</span><span>Augsburg</span><span>Vollzeit</span><span>Mid-Level</span></p>
           </div>
           <span class="job-badge">Hochbau</span>
           <span class="job-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
         </a>
-        <a href="#" class="job">
-          <span class="job-num">02</span>
-          <div class="job-info">
-            <h3 class="job-title">Bauingenieur (m/w/d)</h3>
-            <p class="job-meta"><span>Augsburg</span><span>Vollzeit</span><span>Mid-Level</span></p>
-          </div>
-          <span class="job-badge">Konstruktion</span>
-          <span class="job-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-        </a>
-        <a href="#" class="job">
+
+        <a href="mailto:bewerbung@meixner-partner.de?subject=Bewerbung%20Vergaben%20%26%20Wettbewerbe%20(m%2Fw%2Fd)" class="job">
           <span class="job-num">03</span>
           <div class="job-info">
-            <h3 class="job-title">Architekt (m/w/d)</h3>
-            <p class="job-meta"><span>Augsburg</span><span>Vollzeit / Teilzeit</span><span>Alle Level</span></p>
+            <h3 class="job-title">Architekt / Bauingenieur / Teamassistenz (m/w/d)</h3>
+            <p class="job-meta"><span>Vergaben &amp; Architektenwettbewerbe</span><span>Augsburg</span><span>Voll- / Teilzeit</span><span>Alle Level</span></p>
           </div>
-          <span class="job-badge">Entwurf</span>
-          <span class="job-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-        </a>
-        <a href="#" class="job">
-          <span class="job-num">04</span>
-          <div class="job-info">
-            <h3 class="job-title">DGNB-Auditor (m/w/d)</h3>
-            <p class="job-meta"><span>Augsburg</span><span>Vollzeit</span><span>Senior</span></p>
-          </div>
-          <span class="job-badge">Nachhaltigkeit</span>
-          <span class="job-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
-        </a>
-        <a href="#" class="job">
-          <span class="job-num">05</span>
-          <div class="job-info">
-            <h3 class="job-title">Werkstudent / Praktikum (m/w/d)</h3>
-            <p class="job-meta"><span>Augsburg</span><span>Flexibel</span><span>Studierende</span></p>
-          </div>
-          <span class="job-badge">Alle Bereiche</span>
+          <span class="job-badge">VgV · RPW</span>
           <span class="job-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg></span>
         </a>
       </div>
@@ -1951,26 +2375,26 @@ footer{
         <span class="kontakt-label">Büro</span>
         <div class="kontakt-value">
           <p>Meixner + Partner</p>
-          <p>Beim Stadttor 4</p>
-          <p>86150 Augsburg</p>
+          <p>Gögginger Straße 93</p>
+          <p>86199 Augsburg</p>
         </div>
       </div>
       <div class="kontakt-col">
         <span class="kontakt-label">Kontakt</span>
         <div class="kontakt-value">
-          <p><a href="tel:+4982112345678" class="linehover">+49 821 1234 5678</a></p>
-          <p><a href="mailto:buero@meixner-partner.de" class="linehover">buero@meixner-partner.de</a></p>
+          <p><a href="tel:+498215010500" class="linehover">+49 821 / 50 10 5-0</a></p>
+          <p><a href="mailto:info@meixner-partner.de" class="linehover">info@meixner-partner.de</a></p>
         </div>
       </div>
       <div class="kontakt-col">
         <span class="kontakt-label">Öffnungszeiten</span>
         <div class="kontakt-value">
-          <p>Mo–Fr · 08:00–18:00</p>
+          <p>Mo–Fr · 08:00–17:00</p>
           <p style="font-size:0.72em;color:var(--ink-60);font-family:var(--ff-body)">Und nach Vereinbarung.</p>
         </div>
       </div>
     </div>
-    <a href="mailto:buero@meixner-partner.de" class="kontakt-cta">
+    <a href="mailto:info@meixner-partner.de" class="kontakt-cta">
       <span>Projekt anfragen</span>
       <svg viewBox="0 0 24 24"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
     </a>
@@ -1982,8 +2406,9 @@ footer{
   <div class="foot-inner">
     <div class="foot-grid">
       <div class="foot-brand">
-        <div class="foot-logo">Meixner <em>&amp;</em> Partner</div>
-        <p class="foot-tag">Projektsteuerung und Projektentwicklung für komplexe öffentliche Bauvorhaben. Seit 1996 in Augsburg.</p>
+        <div class="foot-logo">Meixner <em>+</em> Partner</div>
+        <p class="foot-tag">Meixner + Partner Projektentwicklung Projektsteuerung GmbH. Beratende Ingenieure seit 1996 — Augsburg, für Bayern und Baden-Württemberg.</p>
+        <p class="foot-legal"><span>HRB AG Augsburg 19614</span> · <span>USt-ID DE226852359</span></p>
         <div class="foot-socials">
           <a href="#" class="foot-soc" aria-label="LinkedIn">
             <svg viewBox="0 0 24 24"><path d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 1 1 8.3 6.5a1.78 1.78 0 0 1-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0 0 13 14.19a.66.66 0 0 0 0 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 0 1 2.7-1.4c1.55 0 3.36.86 3.36 3.66z"/></svg>
@@ -1991,7 +2416,7 @@ footer{
           <a href="#" class="foot-soc" aria-label="Xing">
             <svg viewBox="0 0 24 24"><path d="M18.4 2H14l-4.8 8.4 3 5.2L18.4 2zM2 6l2.9 5.2L2 16.4h5.1L10 11.2 7.1 6H2z"/></svg>
           </a>
-          <a href="mailto:buero@meixner-partner.de" class="foot-soc" aria-label="Mail">
+          <a href="mailto:info@meixner-partner.de" class="foot-soc" aria-label="Mail">
             <svg viewBox="0 0 24 24"><path d="M22 4H2v16h20V4zM4 6l8 5 8-5v2l-8 5-8-5V6z"/></svg>
           </a>
         </div>
@@ -2019,8 +2444,8 @@ footer{
         <a href="#manifest">Über uns</a>
         <a href="#jobs">Karriere</a>
         <a href="#kontakt">Kontakt</a>
-        <a href="https://www.meixner-partner.de/impressum/" target="_blank" rel="noopener">Impressum</a>
-        <a href="https://www.meixner-partner.de/datenschutz/" target="_blank" rel="noopener">Datenschutz</a>
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
       </div>
     </div>
     <div class="foot-big" aria-hidden="true"><span class="foot-big-inner" id="footBig">Meixner &amp; Partner</span></div>
@@ -2373,12 +2798,13 @@ function playHeroIn(){
       const el = e.target;
       const target = parseInt(el.dataset.target, 10);
       const suffix = el.dataset.suffix || '';
+      const prefix = el.dataset.prefix || '';
       const duration = 1500;
       const start = performance.now();
       function tick(t){
         const p = Math.min((t - start)/duration, 1);
         const eased = 1 - Math.pow(1-p, 3);
-        el.textContent = Math.round(target * eased) + suffix;
+        el.textContent = prefix + Math.round(target * eased) + suffix;
         if(p < 1) requestAnimationFrame(tick);
       }
       requestAnimationFrame(tick);
@@ -2573,61 +2999,6 @@ function setupRefScroll(){
 }
 
 /* ==========================================================================
-   14. TESTIMONIALS SLIDER
-   ========================================================================== */
-(function(){
-  const track = document.getElementById('tTrack');
-  const prev = document.getElementById('tPrev');
-  const next = document.getElementById('tNext');
-  const dotsWrap = document.getElementById('tDots');
-  if(!track) return;
-  const cards = track.querySelectorAll('.test-card');
-  let idx = 0;
-
-  function getPerView(){
-    if(window.innerWidth <= 700) return 1;
-    if(window.innerWidth <= 1100) return 2;
-    return 3;
-  }
-  function buildDots(){
-    dotsWrap.innerHTML = '';
-    const pv = getPerView();
-    const pages = Math.max(1, cards.length - pv + 1);
-    for(let i=0;i<pages;i++){
-      const d = document.createElement('button');
-      d.className = 'test-dot';
-      if(i===idx) d.classList.add('on');
-      d.addEventListener('click', () => { idx = i; update(); });
-      dotsWrap.appendChild(d);
-    }
-  }
-  function update(){
-    const pv = getPerView();
-    const max = Math.max(0, cards.length - pv);
-    if(idx > max) idx = max;
-    if(idx < 0) idx = 0;
-    const style = getComputedStyle(track);
-    const gap = parseFloat(style.gap) || 24;
-    const cw = cards[0].offsetWidth + gap;
-    track.style.transform = `translateX(${-idx * cw}px)`;
-    dotsWrap.querySelectorAll('.test-dot').forEach((d,i) => d.classList.toggle('on', i===idx));
-  }
-  prev.addEventListener('click', () => { idx--; update(); });
-  next.addEventListener('click', () => { idx++; update(); });
-  window.addEventListener('resize', () => { buildDots(); update(); }, {passive:true});
-  let sx=0, moved=false;
-  track.addEventListener('touchstart', e => { sx = e.touches[0].clientX; moved=false; }, {passive:true});
-  track.addEventListener('touchmove', e => { if(Math.abs(e.touches[0].clientX - sx) > 30) moved=true; }, {passive:true});
-  track.addEventListener('touchend', e => {
-    if(!moved) return;
-    const d = sx - e.changedTouches[0].clientX;
-    if(Math.abs(d) > 40){ idx += d > 0 ? 1 : -1; update(); }
-  });
-  buildDots();
-  update();
-})();
-
-/* ==========================================================================
    15. FOOTER BIG NAME — fit + parallax
    ========================================================================== */
 (function(){
@@ -2701,6 +3072,32 @@ setTimeout(() => {
   }
 }, 6000);
 
+/* ==========================================================================
+   COOKIE CONSENT
+   ========================================================================== */
+(function(){
+  const cc = document.getElementById('cc');
+  const btn = document.getElementById('ccOk');
+  if(!cc || !btn) return;
+  const KEY = 'mp_cc_v1';
+  if(localStorage.getItem(KEY) === '1') return;
+  cc.hidden = false;
+  setTimeout(() => cc.dataset.show = '1', 800);
+  btn.addEventListener('click', () => {
+    localStorage.setItem(KEY, '1');
+    cc.dataset.show = '0';
+    setTimeout(() => { cc.hidden = true; }, 600);
+  });
+})();
+
 </script>
+
+<!-- COOKIE CONSENT -->
+<div id="cc" class="cc" role="dialog" aria-label="Cookie-Hinweis" aria-live="polite" hidden>
+  <div class="cc-inner">
+    <p class="cc-text">Diese Website verwendet ausschließlich technisch notwendige Funktionen. Wir setzen keine Tracking- oder Marketing-Cookies. Schriftarten werden lokal ausgeliefert. Mehr in der <a href="datenschutz.html" class="linehover">Datenschutzerklärung</a>.</p>
+    <button id="ccOk" class="cc-btn" aria-label="Hinweis schließen">Verstanden</button>
+  </div>
+</div>
 </body>
 </html>
